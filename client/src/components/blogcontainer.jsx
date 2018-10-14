@@ -5,7 +5,7 @@ import Blogs from './blogs';
 class BlogContainer extends Component {
     constructor() {
         super();
-        this.state = { blogs: {} }
+        this.state = { blogs: [] }
     }
 
     componentDidMount() {
@@ -15,7 +15,7 @@ class BlogContainer extends Component {
                 this.setState({ blogs: data })
             })
             .catch(err => {
-                alert("Blogs failed to load");
+                alert("Blogs failed to load")
                 console.log(err);
             })
     }

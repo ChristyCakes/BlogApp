@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
     .then(blogs => {
         res.json(blogs)
     })
+    .catch((e) => {
+        console.log(e);
+        res.sendStatus(500)
+    })
 });
 
 export default router;

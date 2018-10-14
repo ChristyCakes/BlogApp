@@ -16,7 +16,7 @@ class Home extends Component {
                     <p className="lead text-white">Curl up with a blanket and some coffee and read for hours</p>
                 </div>
             </div>
-            <Link to="/blogcontainer">Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
             {/* <Link to="/authors">Authors</Link>
             <Link to="/write">Write Your Own</Link> */}
             </div>
