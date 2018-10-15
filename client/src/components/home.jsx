@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class Home extends Component {
-
     constructor(props) {
         super(props);
     }
@@ -16,9 +14,9 @@ class Home extends Component {
                     <p className="lead text-white">Curl up with a blanket and some coffee and read for hours</p>
                 </div>
             </div>
-            <Link to="/blogs">Blogs</Link>
-            {/* <Link to="/authors">Authors</Link>
-            <Link to="/write">Write Your Own</Link> */}
+            <Link to="/blogs"><button>Blogs</button></Link>
+            <Link to="/authors"><button>Authors</button></Link>
+            {/* <Link to="/write">Write Your Own</Link> */}
             </div>
         )
     }

@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import Blogs from './blogs';
+import Blog from './blog';
 
 class BlogContainer extends Component {
     constructor() {
         super();
-        this.state = { blogs: [] }
+        this.state = { blog: [] }
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:3000/api/blogs/')
+        fetch(`http://127.0.0.1:3000/api/blogs/${this.props.match.params.id}`)
             .then(response => response.json())
             .then(data => {
-                this.setState({ blogs: data })
+                this.setState({ blog: data })
             })
             .catch(err => {
-                alert("Blogs failed to load")
+                alert("Blog failed to load")
                 console.log(err);
             })
     }
 
     render() {
-        return <Blogs blogs={this.state.blogs} />
+        return <Blog blog={this.state.blog} />
     }
 }
 

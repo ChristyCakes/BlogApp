@@ -5,9 +5,11 @@ const Blogs = (props) => {
     let blogDisplay = [];
     (props.blogs).forEach(item => {
         blogDisplay.push(
-            <div key = {item.id}>
-            <h1>{item.title}</h1>
-            <p>{item.content}</p>
+            <div key={item.id}>
+                <Link to={`blog/${item.id}`} style={{ textDecoration: 'none' }}>
+                    <h1>{item.title}</h1>
+                </Link>
+                <p>By {item.author}</p>
             </div>
         )
     })
