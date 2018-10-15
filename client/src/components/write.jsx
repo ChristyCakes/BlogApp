@@ -32,11 +32,13 @@ class Write extends Component {
                 content: this.state.content,
             })
         })
-            // .then(response => response.json())
-            .then(response => console.log(response))
-            // .then(results => JSON.stringify(results))
-            // .then(idobject => console.log(idobject["id"]))
-            // .then(idobject => this.props.history.push(`/blog/${(idobject).id}`))
+            .then(response => response.json())
+            .then(promise => promise.id)
+            .then(function(id) {
+                return this.props.history.push(`/blog/${id}`)}.bind(this))
+                // .then(id => this.props.history.push(`/${id}/blog`))
+                
+            // .then(id => )
             .catch(err => {
                 alert("Error: Your blog was not created");
                 console.log(err)

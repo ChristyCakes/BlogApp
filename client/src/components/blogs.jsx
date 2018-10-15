@@ -6,7 +6,7 @@ const Blogs = (props) => {
     (props.blogs).forEach(item => {
         blogDisplay.push(
             <div key={item.id}>
-                <Link to={`blog/${item.id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/blog/${item.id}`} style={{ textDecoration: 'none' }}>
                     <h4>{item.title}</h4>
                 </Link>
                 <h5>By {item.author}</h5>

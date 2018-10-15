@@ -1,4 +1,5 @@
 .jumbotron {
     background-image: url('./components/lightrain.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
 }
