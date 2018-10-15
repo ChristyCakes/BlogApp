@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './home';
 import '../styles.css';
 import { BlogsContainer } from './blogscontainer';
 import { BlogContainer } from './blogcontainer';
 import { AuthorContainer } from './authorcontainer';
+import Home from './home';
+import Write from './write';
 
 class Navigation extends Component {
 
@@ -17,7 +18,7 @@ class Navigation extends Component {
                         <Route path="/blogs" component={BlogsContainer} />
                         <Route path="/authors" component={AuthorContainer} />
                         <Route path="/blog/:id" component={BlogContainer} />
-                        {/* <Route path="/write" component={Write} /> */}
+                        <Route path="/write" component={Write} />
                     </Switch>
                 </Fragment>
             </Router>

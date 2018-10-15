@@ -8,15 +8,15 @@ class Home extends Component {
     render() {
         return (
             <div>
-            <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-4 text-white" >Rainy Day Blog</h1>
-                    <p className="lead text-white">Curl up with a blanket and some coffee and read for hours</p>
+                <div className="jumbotron jumbotron-fluid">
+                    <div className="container">
+                        <h1 className="display-4 text-white" >Rainy Day Blog</h1>
+                        <p className="lead text-white">Curl up with a blanket and some coffee and read for hours</p>
+                    </div>
                 </div>
-            </div>
-            <Link to="/blogs"><button>Blogs</button></Link>
-            <Link to="/authors"><button>Authors</button></Link>
-            {/* <Link to="/write">Write Your Own</Link> */}
+                <Link to="/blogs"><button>Blogs</button></Link>
+                <Link to="/authors"><button>Authors</button></Link>
+                <Link to="/write"><button>Write Your Own</button></Link>
             </div>
         )
     }

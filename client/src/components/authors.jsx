@@ -16,14 +16,6 @@ const Authors = (props) => {
         <div>
             <Link to="/">Home</Link>
             <div>{authorDisplay}</div>
-            {/* <Link to={{
-                pathname: `/${props.id}/edit`,
-                state: {
-                    user: props.user,
-                    text: props.text
-                }
-            }}>
-            </Link> */}
         </div>
     )
 }

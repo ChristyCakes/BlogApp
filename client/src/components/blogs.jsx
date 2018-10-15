@@ -7,9 +7,10 @@ const Blogs = (props) => {
         blogDisplay.push(
             <div key={item.id}>
                 <Link to={`blog/${item.id}`} style={{ textDecoration: 'none' }}>
-                    <h1>{item.title}</h1>
+                    <h4>{item.title}</h4>
                 </Link>
-                <p>By {item.author}</p>
+                <h5>By {item.author}</h5>
+                <hr/>
             </div>
         )
     })
@@ -18,14 +19,6 @@ const Blogs = (props) => {
         <div>
             <Link to="/">Home</Link>
             <div>{blogDisplay}</div>
-            {/* <Link to={{
-                pathname: `/${props.id}/edit`,
-                state: {
-                    user: props.user,
-                    text: props.text
-                }
-            }}>
-            </Link> */}
         </div>
     )
 }

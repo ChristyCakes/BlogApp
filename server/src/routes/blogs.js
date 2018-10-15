@@ -10,8 +10,7 @@ router.get('/:id?', (req, res) => {
         blogs.getOne(id)
             .then(blog => {
                 res.json(blog)
-            })
-            .catch((e) => {             // do I need this catch or is last one enough?
+            }).catch((e) => {             // do I need this catch or is last one enough?
                 console.log(e);
                 res.sendStatus(500)
             })
@@ -19,12 +18,22 @@ router.get('/:id?', (req, res) => {
         blogs.getAll()
             .then(blogs => {
                 res.json(blogs)
-            })
-            .catch((e) => {
+            }).catch((e) => {
                 console.log(e);
                 res.sendStatus(500)
             })
     }
 });
+
+router.post('/', (req, res) => {
+    let blog = req.body;
+    blogs.insert(blog)
+    .then(results => {
+        res.json(results)       
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500)
+    })
+})
 
 export default router;

@@ -1,3 +1,4 @@
 .jumbotron {
-    background-image: url('./components/lightrain.jpg')
+    background-image: url('./components/lightrain.jpg');
+    background-repeat: no-repeat;
 }
