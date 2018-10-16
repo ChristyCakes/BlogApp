@@ -34,8 +34,6 @@ class Write extends Component {
         })
             .then(response => response.json())
             .then(promise => promise.id)
-            // .then(function(id) {
-            //     return this.props.history.push(`/blog/${id}`)}.bind(this))
             .then(id => {return this.props.history.push(`blog/${id}/`)})
             .catch(err => {
                 alert("Error: Your blog was not created");
