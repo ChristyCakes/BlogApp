@@ -15,4 +15,15 @@ router.get('/', (req, res) => {
     })
 });
 
+router.post('/', (req, res) => {
+    let name = req.body;
+    authors.insert(name)
+    .then(results => {
+        res.json(results)      
+    }).catch((e) => {
+        console.log(e);
+        res.sendStatus(500)
+    })
+})
+
 export default router;

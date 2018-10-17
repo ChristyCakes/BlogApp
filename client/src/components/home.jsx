@@ -19,7 +19,7 @@ class Home extends Component {
                 </div>
                 <Link to="/blogs"><button>Blogs</button></Link>
                 <Link to="/authors"><button>Authors</button></Link>
-                <Link to="/write"><button>Write Your Own</button></Link>
+                <Link to="/login"><button>Write Your Own</button></Link>
                 <h2 className="text-info">Featured Blogs</h2>
                 <div className="cards">
                     <div className="card col-3" style={{width: "18rem"}}>

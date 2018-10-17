@@ -6,6 +6,7 @@ import { BlogContainer } from './blogcontainer';
 import { AuthorContainer } from './authorcontainer';
 import Home from './home';
 import Write from './write';
+import Login from './login';
 
 class Navigation extends Component {
 
@@ -18,6 +19,7 @@ class Navigation extends Component {
                         <Route path="/blogs" component={BlogsContainer} />
                         <Route path="/authors" component={AuthorContainer} />
                         <Route path="/blog/:id" component={BlogContainer} />
+                        <Route path="/login" component={Login} />
                         <Route path="/write" component={Write} />
                     </Switch>
                 </Fragment>

@@ -33,7 +33,7 @@ class Table {
         let columns = Object.keys(row);
         let values = Object.values(row);
         let placeholderString = generatePlaceholders(values);
-        let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString});`;
+        let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString}) on DUPLICATE KEY UPDATE email = VALUES(email);`;
         let results = await executeQuery(sql, values);
         return { id: results.insertId };
     }
