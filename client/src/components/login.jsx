@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-// import write from './write';
+import Write from './write';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class Login extends Component {
     constructor() {
         super();
-        this.state = { 
+        this.state = {
             name: "",
             email: ""
         }
@@ -30,13 +30,17 @@ class Login extends Component {
                 email: this.state.email
             })
         })
-            // .then(response => response.json())
-            // .then(promise => promise.id)
-            .then(id => {return this.props.history.push(`/write`)})
+            .then(() => {
+                return this.props.history.push({
+                    pathname: '/write',
+                    state: { name: this.state.name }
+                })
+            })
             .catch(err => {
                 alert("Error: Author name was not created");
                 console.log(err)
             })
+
     }
 
     render() {

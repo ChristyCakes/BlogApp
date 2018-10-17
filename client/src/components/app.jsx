@@ -20,6 +20,7 @@ class Navigation extends Component {
                         <Route path="/authors" component={AuthorContainer} />
                         <Route path="/blog/:id" component={BlogContainer} />
                         <Route path="/login" component={Login} />
+                        {/* <Route path="/write" render={props => <Write name={props.name} />} /> */}
                         <Route path="/write" component={Write} />
                     </Switch>
                 </Fragment>

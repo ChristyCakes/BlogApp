@@ -16,8 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    let name = req.body;
-    authors.insert(name)
+    authors.insert(req.body)
     .then(results => {
         res.json(results)      
     }).catch((e) => {
