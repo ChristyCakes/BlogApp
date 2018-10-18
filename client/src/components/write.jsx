@@ -27,6 +27,7 @@ class Write extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                author: this.props.location.state.name,
                 title: this.state.title,
                 content: this.state.content,
             })
@@ -41,14 +42,12 @@ class Write extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <Link to="/">Home</Link>
                 <h1>Create a Blog Post</h1>
                 <h3>Author: {this.props.location.state.name}</h3>
                 <form action="">
-                    
                     <input
                         type="text"
                         placeholder="Title"
