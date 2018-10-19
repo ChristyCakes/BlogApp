@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import Authors from './authors';
+import Author from './author';
 
 class AuthorContainer extends Component {
     constructor() {
         super();
-        this.state = { authors: [] }
+        this.state = { authorblogs: [] }
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:3000/api/authors/')
+        fetch(`http://127.0.0.1:3000/api/authors/${this.props.match.params.id}`)
             .then(response => response.json())
-            .then(data => {
-                this.setState({ authors: data })
-            })
+            .then(data => { this.setState({ authorblogs: data[0] }) })
             .catch(err => {
-                alert("Authors failed to load")
+                alert("Author's blogs failed to load")
                 console.log(err);
             })
     }
 
     render() {
-        return <Authors authors={this.state.authors} />
+        return <Author authorblogs={this.state.authorblogs} authorname={this.props.location.state.authorname}/>
     }
 }
 

@@ -12,8 +12,8 @@ router.get('/:id?', (req, res) => {
                 res.json(blog)
             }).catch((e) => {             // do I need this catch or is last one enough?
                 console.log(e);
-                res.sendStatus(500)
-            })
+                res.sendStatus(500);
+            });
     } else {
         blogs.getAll()
             .then(blogs => {

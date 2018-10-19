@@ -7,7 +7,7 @@ class Table {
         }
         this.tableName = tableName;
     }
-
+    
     async getOne(id) {
         let sql = `SELECT * FROM ${this.tableName} WHERE id = ${id};`;
         let results = await executeQuery(sql, [id]);

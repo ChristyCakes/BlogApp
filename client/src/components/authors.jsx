@@ -6,7 +6,13 @@ const Authors = (props) => {
     (props.authors).forEach(item => {
         authorDisplay.push(
             <div key = {item.id}>
+            <Link to={{
+                pathname: `/author/${item.id}`,
+                state: { authorname: item.name },
+                style: { textDecoration: 'none' }
+            }}>
             <h1>{item.name}</h1>
+            </Link>
             <p>{item.email}</p>
             </div>
         )
