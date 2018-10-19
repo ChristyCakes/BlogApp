@@ -6,5 +6,6 @@ select
 	b.title as 'blogtitle'
 from authorblog x
 	join authors a on a.id = x.authorid
-	join blogs b on b.id = x.blogid;
+	join blogs b on b.id = x.blogid
+where authorid = x.authorid;
 end
