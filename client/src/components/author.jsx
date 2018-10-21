@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Nav from './nav';
 
 const Author = (props) => {
     let authorblogs = [];
@@ -10,7 +10,7 @@ const Author = (props) => {
     })
     return (
         <div>
-            <Link to="/">Home</Link>
+            <Nav />
             <h1>Blogs by {props.authorname}</h1>
             <hr />
             <div>{authorblogs}</div>

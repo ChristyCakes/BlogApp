@@ -9,7 +9,7 @@ import Home from './home';
 import Write from './write';
 import Login from './login';
 
-class Navigation extends Component {
+class App extends Component {
 
     render() {
         return (
@@ -23,6 +23,7 @@ class Navigation extends Component {
                         <Route path="/author/:id" component={AuthorContainer} />
                         <Route path="/login" component={Login} />
                         <Route path="/write" component={Write} />
+
                     </Switch>
                 </Fragment>
             </Router>
@@ -30,4 +31,4 @@ class Navigation extends Component {
     }
 }
 
-export default Navigation;
+export default App;

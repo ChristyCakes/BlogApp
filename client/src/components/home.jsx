@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Featured from './featured';
+import Nav from './nav';
 
 class Home extends Component {
     constructor(props) {
@@ -15,9 +16,7 @@ class Home extends Component {
                         <p className="lead text-white">Curl up with a blanket and some coffee and read for hours</p>
                     </div>
                 </div>
-                <Link to="/blogs"><button>Blogs</button></Link>
-                <Link to="/authors"><button>Authors</button></Link>
-                <Link to="/login"><button>Write Your Own</button></Link>
+                <Nav />
                 <Featured />
             </div>
         )

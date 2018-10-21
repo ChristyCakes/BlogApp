@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Nav from './nav';
 
 const Authors = (props) => {
     let authorDisplay = [];
@@ -15,15 +16,16 @@ const Authors = (props) => {
             </Link>
             <p>{item.email}</p>
             </div>
-        )
-    })
+        );
+    });
 
     return (
         <div>
-            <Link to="/">Home</Link>
+            <Nav />
+            <div>Rainy Day Authors</div>
             <div>{authorDisplay}</div>
         </div>
-    )
-}
+    );
+};
 
 export default Authors;

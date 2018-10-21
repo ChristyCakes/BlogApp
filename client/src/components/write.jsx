@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import { render } from 'react-dom';
 import 'isomorphic-fetch';
+import Nav from './nav';
 
 class Write extends Component {
     constructor(props) {
@@ -10,14 +9,14 @@ class Write extends Component {
             author: "",
             title: "",
             content: ""
-        }
-        this.postblog = this.postblog.bind(this)
-        this.inputHandler = this.inputHandler.bind(this)
-    }
+        };
+        this.postblog = this.postblog.bind(this);
+        this.inputHandler = this.inputHandler.bind(this);
+    };
 
     inputHandler(event) {
-        this.setState({ [event.target.name]: event.target.value })
-    }
+        this.setState({ [event.target.name]: event.target.value });
+    };
 
     postblog(event) {
         event.preventDefault();
@@ -39,13 +38,13 @@ class Write extends Component {
             .catch(err => {
                 alert("Error: Your blog was not created");
                 console.log(err)
-            })
-    }
+            });
+    };
 
     render() {
         return (
             <div>
-                <Link to="/">Home</Link>
+                <Nav />
                 <h1>Create a Blog Post</h1>
                 <h3>Author: {this.props.location.state.name}</h3>
                 <form action="">
@@ -75,8 +74,8 @@ class Write extends Component {
                     </button>
                 </form>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Write;

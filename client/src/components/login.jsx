@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import Write from './write';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Nav from './nav';
 
 class Login extends Component {
     constructor() {
@@ -37,7 +36,6 @@ class Login extends Component {
                     pathname: '/write',
                     state: {
                         name: this.state.name,
-                        // id: id
                     }
                 })
             })
@@ -51,8 +49,9 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Link to="/">Home</Link>
-                <h1>Enter the Author's Name</h1>
+                <Nav />
+                <h1>Write Your Own Blog</h1>
+                <h2>Enter the Author's Name</h2>
                 <form action="">
                     <input
                         type="text"
