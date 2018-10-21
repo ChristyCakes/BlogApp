@@ -28,6 +28,7 @@ class Write extends Component {
             },
             body: JSON.stringify({
                 author: this.props.location.state.name,
+                // authorid: this.props.location.state.id,
                 title: this.state.title,
                 content: this.state.content,
             })

@@ -30,10 +30,15 @@ class Login extends Component {
                 email: this.state.email
             })
         })
-            .then(() => {
+            .then(response => response.json())
+            .then(promise => promise.id)
+            .then((id) => {
                 return this.props.history.push({
                     pathname: '/write',
-                    state: { name: this.state.name }
+                    state: {
+                        name: this.state.name,
+                        // id: id
+                    }
                 })
             })
             .catch(err => {

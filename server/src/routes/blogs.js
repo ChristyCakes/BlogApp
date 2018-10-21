@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import Table from '../table'
+import StoredProcedure from '../storedprocedure';
 let router = Router();
 
-let blogs = new Table('blogs')
+let blogs = new Table('blogs');
+let spAuthorBlog = new StoredProcedure('spAuthorBlog');
 
 router.get('/:id?', (req, res) => {
     let id = req.params.id;
@@ -29,8 +31,12 @@ router.post('/', (req, res) => {
     let blog = req.body;
     blogs.insert(blog)
     .then(results => {
-        res.json(results)      
-    }).catch((e) => {
+        res.json(results)     
+    }).then(() => spAuthorBlog.call2(blog.author))
+    .then((results) => {
+        res.json(results)
+    })
+    .catch((e) => {
         console.log(e);
         res.sendStatus(500)
     })

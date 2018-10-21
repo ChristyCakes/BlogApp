@@ -1,4 +1,4 @@
-import { executeQuery } from './config/db';
+import { executeQuery } from './config/db';;
 
 class StoredProcedure {
     constructor(spName) {
@@ -11,6 +11,12 @@ class StoredProcedure {
     call(param) {
         let sql = `CALL ${this.StoredProcedure}(${param})`;
         let results = executeQuery(sql, [param]);
+        return results;
+    }
+
+    call2(author) {
+        let sql =  `CALL ${this.StoredProcedure}(${author}, last_insert_id())`;
+        let results = executeQuery(sql, [author]);
         return results;
     }
 }

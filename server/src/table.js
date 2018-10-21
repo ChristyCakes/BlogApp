@@ -38,7 +38,6 @@ class Table {
             let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString}) on DUPLICATE KEY UPDATE email = VALUES(email);`;
             let results = await executeQuery(sql, values);
             return { id: results.insertId };
-
         } else {
             let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString});`;
             let results = await executeQuery(sql, values);
