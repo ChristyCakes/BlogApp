@@ -5,7 +5,8 @@ let pool = mysql.createPool({
     host: 'localhost',
     user: 'blogapp',
     password: 'blogapp',
-    database: 'blog'
+    database: 'blog',
+    multipleStatements: true
 });
 
 async function executeQuery(sql, args = []) {

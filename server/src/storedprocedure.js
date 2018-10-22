@@ -1,4 +1,4 @@
-import { executeQuery } from './config/db';;
+import { executeQuery, generatePlaceholders } from './config/db';;
 
 class StoredProcedure {
     constructor(spName) {
@@ -14,9 +14,10 @@ class StoredProcedure {
         return results;
     }
 
-    call2(author) {
-        let sql =  `CALL ${this.StoredProcedure}(${author}, last_insert_id())`;
-        let results = executeQuery(sql, [author]);
+    async call2(author) {
+        let placeholderString = generatePlaceholders(author);
+        let sql =  `CALL ${this.StoredProcedure}(${placeholderString}, last_insert_id())`;
+        let results = await executeQuery(sql, [author]);
         return results;
     }
 }

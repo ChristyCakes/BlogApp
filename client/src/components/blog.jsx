@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Nav from './nav';
 
 const Blog = (props) => {
-    console.log(props)
     return (
         <div>
             <Nav />

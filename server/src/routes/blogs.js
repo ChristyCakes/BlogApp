@@ -30,27 +30,24 @@ router.get('/:id?', (req, res) => {
 router.post('/', (req, res) => {
     let blog = req.body;
     blogs.insert(blog)
-    .then(results => {
-        res.json(results)     
-    }).then(() => spAuthorBlog.call2(blog.author))
-    .then((results) => {
-        res.json(results)
-    })
-    .catch((e) => {
-        console.log(e);
-        res.sendStatus(500)
-    })
+        .then(results => {
+            res.json(results)
+        }).then(() => spAuthorBlog.call2(blog.author))
+        .catch((e) => {
+            console.log(e);
+            res.sendStatus(500)
+        })
 })
 
 router.delete('/:id', (req, res) => {
     let id = req.params.id
     blogs.delete(id)
-    .then(results => {
-        res.json(results)
-    }).catch(e => {
-        console.log(e)
-        res.sendStatus(500)
-    })
+        .then(results => {
+            res.json(results)
+        }).catch(e => {
+            console.log(e)
+            res.sendStatus(500)
+        })
 })
 
 export default router;
