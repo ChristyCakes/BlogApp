@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import reactlogo from './react.png'
-import coast from './coast.jpg'
-import fire from './fireplace.jpg';
+import reactlogo from './images/react.png'
+import coast from './images/coast.jpg'
+import fire from './images/fireplace.jpg';
 
 const Featured = (props) => {
     return (

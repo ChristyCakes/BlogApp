@@ -1,13 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import '../styles.css';
-import { BlogsContainer } from './blogscontainer';
-import { BlogContainer } from './blogcontainer';
-import { AuthorsContainer } from './authorscontainer';
-import { AuthorContainer } from './authorcontainer'
-import Home from './home';
-import Write from './write';
-import Login from './login';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BlogsContainer, BlogContainer, AuthorsContainer, AuthorContainer, Write, Home, Login } from './components/index';
+import './styles.css';
 
 class App extends Component {
 
@@ -23,7 +17,6 @@ class App extends Component {
                         <Route path="/author/:id" component={AuthorContainer} />
                         <Route path="/login" component={Login} />
                         <Route path="/write" component={Write} />
-
                     </Switch>
                 </Fragment>
             </Router>

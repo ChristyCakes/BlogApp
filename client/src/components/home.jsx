@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Featured from './featured';
 import Nav from './nav';
 
@@ -23,4 +23,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export {Home};
