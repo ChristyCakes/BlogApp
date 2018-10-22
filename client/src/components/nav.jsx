@@ -3,7 +3,7 @@ import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom';
 
 const Nav = (props) => {
     return (
-        <div>
+        <div className='nav'>
             <Link to="/"><button>Home</button></Link>
             <Link to="/blogs"><button>Blogs</button></Link>
             <Link to="/authors"><button>Authors</button></Link>
