@@ -4,11 +4,6 @@
     background-size: cover;
 }
 
-.cards {
-    display: flex;
-    flex-direction: row;
-}
-
 .nav {
     display: flex;
     flex-direction: row;
@@ -16,15 +11,18 @@
 }
 
 .nav button {
-    background-color: rgb(5, 224, 224);
+    background-color: rgb(19, 191, 221);
     color: white; 
     /* margin: 1rem; */
     width: 10rem;
 }
 
 .cards {
-    width: 50rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.card {
+    max-width: 15%;
 }

@@ -5,4 +5,5 @@
 Includes
 * REST requests to an Express.js Server
 * Connection to MySQL database and its stored procedures
-* Login authentication using Passport
+* Login authentication with auth tokens using Passport
+* route protection in back end routers and in the front end PrivateRoutes
