@@ -7,7 +7,7 @@ const Blogs = (props) => {
     (props.blogs).forEach(item => {
         blogDisplay.push(
             <div key={item.id}>
-                <Link to={`/blog/${item.id}`} style={{ textDecoration: 'none' }}>
+                <Link className="bloglink" to={`/blog/${item.id}`}>
                     <h4>{item.title}</h4>
                 </Link>
                 <h5>By {item.author}</h5>
@@ -19,7 +19,7 @@ const Blogs = (props) => {
     return (
         <div>
             <Nav />
-            <div>Rainy Day Blogs</div>
+            <h2 className="text-secondary text-center mt-5">Rainy Day Blogs</h2>
             <div>{blogDisplay}</div>
         </div>
     );

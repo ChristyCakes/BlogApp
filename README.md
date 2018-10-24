@@ -7,3 +7,4 @@ Includes
 * Connection to MySQL database and its stored procedures
 * Login authentication with auth tokens using Passport
 * route protection in back end routers and in the front end PrivateRoutes
+* styled with Bootstrap and CSS

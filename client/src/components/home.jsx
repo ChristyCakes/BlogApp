@@ -9,7 +9,7 @@ class Home extends Component {
     }
     render() {
         return (
-            <div style={{ backgroundColor: "rgb(207, 231, 238)" }}>
+            <div>
                 <div className="jumbotron jumbotron-fluid">
                     <div className="container">
                         <h1 className="display-4 text-white" >Rainy Day Blog</h1>
