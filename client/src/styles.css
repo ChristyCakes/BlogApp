@@ -26,11 +26,20 @@
     max-width: 15%;
 }
 
-.bloglink {
+.textlink:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.textlink {
     text-decoration: none;
     color: rgb(19, 191, 221);
 }
 
-#root {
+body {
     background-color: rgb(207, 231, 238);
+}
+
+.singleblog {
+    margin: 0 10rem;
 }

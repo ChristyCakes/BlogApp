@@ -50,8 +50,8 @@ class Login extends Component {
         return (
             <div>
                 <Nav />
-                <h1>Write Your Own Blog</h1>
-                <h2>Enter the Author's Name</h2>
+                <h2 className="text-secondary text-center mt-5">Login to Write Your Own Blog</h2>
+                <h2>Enter the Author's Info</h2>
                 <form action="">
                     <input
                         type="text"

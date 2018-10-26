@@ -11,9 +11,9 @@ const Author = (props) => {
     return (
         <div>
             <Nav />
-            <h1>Blogs by {props.authorname}</h1>
+            <h1 className="text-secondary text-center mt-5">Blogs by {props.authorname}</h1>
             <hr />
-            <div>{authorblogs}</div>
+            <div className="text-info text-center">{authorblogs}</div>
 
         </div>
     )

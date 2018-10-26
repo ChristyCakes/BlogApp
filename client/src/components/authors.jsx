@@ -7,14 +7,15 @@ const Authors = (props) => {
     (props.authors).forEach(item => {
         authorDisplay.push(
             <div key = {item.id}>
-            <Link to={{
+            <Link className="textlink" to={{
                 pathname: `/author/${item.id}`,
                 state: { authorname: item.name },
                 style: { textDecoration: 'none' }
             }}>
-            <h1>{item.name}</h1>
+            <h4>{item.name}</h4>
             </Link>
             <p>{item.email}</p>
+            <hr />
             </div>
         );
     });
@@ -22,7 +23,7 @@ const Authors = (props) => {
     return (
         <div>
             <Nav />
-            <div>Rainy Day Authors</div>
+            <h2 className="text-secondary text-center mt-5">Rainy Day Authors</h2>
             <div>{authorDisplay}</div>
         </div>
     );
