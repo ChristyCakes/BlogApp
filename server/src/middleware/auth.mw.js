@@ -5,7 +5,7 @@ function tokenMiddleware(req, res, next) {
 }
 
 function isLoggedIn(req, res, next) {
-    if (req.author) {
+    if (req.user) {
         next();
     } else {
         res.sendStatus(401);
