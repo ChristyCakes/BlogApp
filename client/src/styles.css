@@ -10,11 +10,11 @@
     justify-content: center;
 }
 
-.nav button {
+/* .nav button {
     background-color: rgb(19, 191, 221);
     color: white; 
     width: 10rem;
-}
+} */
 
 .cards {
     display: flex;

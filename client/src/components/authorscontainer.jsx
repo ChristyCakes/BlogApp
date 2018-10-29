@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import 'isomorphic-fetch';
+// import 'isomorphic-fetch';
 import Authors from './authors';
+import * as authorsService from '../services/authors';
 
 class AuthorsContainer extends Component {
     constructor() {
@@ -9,7 +10,8 @@ class AuthorsContainer extends Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:3000/api/authors/')
+            authorsService.all()
+        // fetch('http://127.0.0.1:3000/api/authors/')
             .then(response => response.json())
             .then(data => {
                 this.setState({ authors: data })
