@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import 'isomorphic-fetch';
 import Blog from './blog';
-import * as blogService from '../services/blogs';
+import * as blogsService from '../services/blogs';
 
 class BlogContainer extends Component {
     constructor() {
@@ -12,7 +12,7 @@ class BlogContainer extends Component {
     componentDidMount() {
         blogsService.one(this.props.match.params.id)
         // fetch(`http://127.0.0.1:3000/api//blogs/${this.props.match.params.id}`)
-            .then(response => response.json())
+            // .then(response => response.json())
             .then(data => {
                 this.setState({ blog: data })
             })

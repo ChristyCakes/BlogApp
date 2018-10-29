@@ -26,4 +26,5 @@ class Logout extends Component {
     }
 }
 
-export default Logout;
+// export default Logout;
+export { Logout }
