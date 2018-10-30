@@ -19,7 +19,7 @@ class App extends Component {
                         <Route path="/author/:id" component={AuthorContainer} />
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
-                        <PrivateRoute path="/admin" component={Admin} />
+                        <PrivateRoute path="/api/users/me" component={Admin} />
                         <PrivateRoute path="/write" component={Write} />
                     </Switch>
                 </Fragment>

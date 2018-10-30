@@ -13,7 +13,7 @@ class Login extends Component {
             password: '',
             feedbackMessage: '',
             checkingLogin: true,
-            // name: ''
+            me: ''
         };
         // this.inputHandler = this.inputHandler.bind(this);
     }
@@ -32,7 +32,7 @@ class Login extends Component {
     login(e) {
         e.preventDefault();
         userService.login(this.state.email, this.state.password)
-            .then(() => {
+            .then((data) => {
                 this.setState({ redirectToReferrer: true });
             }).catch((err) => {
                 if (err.message) {
@@ -55,7 +55,7 @@ class Login extends Component {
     }
 
     render() {
-        const { from } = this.props.location.state || { from: { pathname: '/admin', state: { ...this.state } } };
+        const { from } = this.props.location.state || { from: { pathname: '/api/users/me', state: { ...this.state } } };
         const { redirectToReferrer, checkingLogin } = this.state;
 
         if (checkingLogin) {

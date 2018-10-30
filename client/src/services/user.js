@@ -1,6 +1,7 @@
 import * as baseService from './base';
 
 let loggedIn = false;
+let meData = {};
 
 function isLoggedIn() {
     return loggedIn;
@@ -8,17 +9,17 @@ function isLoggedIn() {
 
 function checkLogin() {
     if (loggedIn) {
+        me()
         return Promise.resolve(true);
     } else {
         baseService.populateAuthToken();
         return me()
-        .then((user) => {
+        .then((data) => {
+            meData = data;
             loggedIn = true;
             return Promise.resolve(true);
 
-        }).then(user => console.log('user.js: ', user))
-        
-        .catch(() => {
+        }).catch(() => {
             return Promise.resolve(false);
         });
     }
@@ -57,4 +58,4 @@ function me() {
     return baseService.get('/api/users/me');
 }
 
-export { isLoggedIn, checkLogin, login, logout };
+export { isLoggedIn, checkLogin, login, logout, meData };

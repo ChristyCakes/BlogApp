@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import * as authorsService from '../services/authors';
 import AdminBlogs from './adminblogs';
+import {meData} from '../services/user'
 import Nav from './nav';
 
+
 class Admin extends Component {
-    constructor() {
-        super();
-        this.state = { blogs: [] }
+    constructor(props) {
+        super(props);
+        this.state = { 
+            id: meData.id,
+            name: meData.name,
+            blogs: [] }
     }
 
-    // gotta get author id ?????
+    
     // componentDidMount() {
+        
+        
     //     authorsService.one(this.props.location.state.name)
     //         .then(data => {
     //             this.setState({ blogs: data })
@@ -26,7 +33,7 @@ class Admin extends Component {
             
             <div>
                 <Nav />
-                <h3>Blogs by: </h3>
+                <h3>Blogs by: {this.state.name}</h3>
         {/* <AdminBlogs blogs={...this.state} /> */}
         {/* <NewBlog /> */}
         </div>
