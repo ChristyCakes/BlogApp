@@ -10,12 +10,6 @@
     justify-content: center;
 }
 
-/* .nav button {
-    background-color: rgb(19, 191, 221);
-    color: white; 
-    width: 10rem;
-} */
-
 .cards {
     display: flex;
     flex-direction: row;
@@ -42,4 +36,9 @@ body {
 
 .singleblog {
     margin: 0 10rem;
+}
+
+.card img {
+    border-radius: 1%;
+    box-shadow: 10px 10px 5px 0px rgba(204,202,204,1)
 }

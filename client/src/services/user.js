@@ -15,7 +15,10 @@ function checkLogin() {
         .then((user) => {
             loggedIn = true;
             return Promise.resolve(true);
-        }).catch(() => {
+
+        }).then(user => console.log('user.js: ', user))
+        
+        .catch(() => {
             return Promise.resolve(false);
         });
     }

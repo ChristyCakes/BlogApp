@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import 'isomorphic-fetch';
+// import 'isomorphic-fetch';
 import Nav from './nav';
+import * as authorsService from '../services/authors';
 
-class Login extends Component {
+class NewAuthor extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,23 +20,27 @@ class Login extends Component {
 
     postauthor(event) {
         event.preventDefault();
-        fetch('http://127.0.0.1:3000/api/authors/', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: this.state.name,
-                email: this.state.email
-            })
-        })
-            .then(response => response.json())
+        authorsService.insert({
+                    name: this.state.name,
+                    email: this.state.email
+                })
+        // fetch('http://127.0.0.1:3000/api/authors/', {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         name: this.state.name,
+        //         email: this.state.email
+        //     })
+        // })
+            // .then(response => response.json())
             .then(promise => promise.id)
             .then((id) => {
                 return this.props.history.push({
                     pathname: '/write',
                     state: {
-                        name: this.state.name,
+                        name: this.state.name
                     }
                 })
             })
@@ -50,7 +55,6 @@ class Login extends Component {
         return (
             <div>
                 <Nav />
-                <h2 className="text-secondary text-center mt-5">Login to Write Your Own Blog</h2>
                 <h2>Enter the Author's Info</h2>
                 <form action="">
                     <input
@@ -81,4 +85,4 @@ class Login extends Component {
     }
 }
 
-export {Login};
+export {NewAuthor};

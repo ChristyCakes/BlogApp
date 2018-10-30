@@ -5,13 +5,13 @@ import { AuthButton } from './auth';
 const Nav = (props) => {
     return (
         <div className='nav'>
-            <Link to="/" className="btn btn-info">Home</Link>
-            <Link to="/blogs" className="btn btn-info">Blogs</Link>
-            <Link to="/authors" className="btn btn-info">Authors</Link>
+            <Link to="/" className="btn btn-info m-1">Home</Link>
+            <Link to="/blogs" className="btn btn-info m-1">Blogs</Link>
+            <Link to="/authors" className="btn btn-info m-1">Authors</Link>
             <AuthButton />
-            <Link to="/login" className="btn btn-info">Become a Blogger</Link>
         </div>
     )
 }
 
 export default Nav;
+// export { Nav };
