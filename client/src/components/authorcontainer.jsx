@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import 'isomorphic-fetch';
 import Author from './author';
 import * as authorsService from '../services/authors';
 
@@ -11,8 +10,6 @@ class AuthorContainer extends Component {
 
     componentDidMount() {
         authorsService.one(this.props.match.params.id)
-        // fetch(`http://127.0.0.1:3000/api/authors/${this.props.match.params.id}`)
-            // .then(response => response.json())
             .then(data => { this.setState({ authorblogs: data[0] }) })
             .catch(err => {
                 alert("Author's blogs failed to load")
