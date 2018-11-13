@@ -5,3 +5,4 @@ export * from './authorcontainer';
 export * from './home';
 export * from './write';
 export * from './admin';
+export * from './edit';

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { BlogsContainer, BlogContainer, AuthorsContainer, AuthorContainer, Write, Home, Admin, Nav } from './components/index';
+import { BlogsContainer, BlogContainer, AuthorsContainer, AuthorContainer, Write, Home } from './components';
+import { Admin, Edit } from './components/admin'
 import { PrivateRoute, Login, Logout } from './components/auth';
 import './styles.css';
 
@@ -10,7 +11,6 @@ class App extends Component {
         return (
             <Router>
                 <Fragment>
-                    {/* <Nav /> */}
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/blogs" component={BlogsContainer} />
@@ -21,6 +21,7 @@ class App extends Component {
                         <Route path="/logout" component={Logout} />
                         <PrivateRoute path="/api/users/me" component={Admin} />
                         <PrivateRoute path="/write" component={Write} />
+                        <PrivateRoute path="/edit/:id" component={Edit} />
                     </Switch>
                 </Fragment>
             </Router>

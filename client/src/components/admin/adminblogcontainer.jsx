@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AdminBlogs from './adminblogs';
-import * as authorsService from '../services/authors';
+import * as authorsService from '../../services/authors';
 
 class AdminBlogContainer extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class AdminBlogContainer extends Component {
     }
 
     render() {
-        return <AdminBlogs adminblogs={this.state.adminblogs}/>
+        return <AdminBlogs {...this.props} adminblogs={this.state.adminblogs}/>
     }
 }
 
