@@ -6,13 +6,13 @@ const AdminBlogs = (props) => {
     let adminblogs = [];
     (props.adminblogs).forEach(element => {
         adminblogs.push(
-            <div className='horiz my-2'>
+            <div className='horiz'>
                 <h4>{element.blogtitle}</h4>
                 <Link to={{ 
                     pathname: `/edit/${element.blogid}`,
                     state: { ...props }
                 }}
-                    className="btn btn-outline-secondary btn-sm mx-3">Edit</Link>
+                    className="text-secondary">Edit</Link>
             </div>
         )
     })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { meData } from '../../services/user'
-import Nav from '../nav';
+import Nav from '../home/nav';
 import AdminBlogContainer from './adminblogcontainer'
 
 

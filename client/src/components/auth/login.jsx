@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import * as userService from '../../services/user';
 import { Redirect } from 'react-router-dom';
 import IndeterminateProgress from '../utilities/indeterminateprogress';
-import Nav from '../nav';
+import Nav from '../home/nav';
 
 class Login extends Component {
     constructor(props) {

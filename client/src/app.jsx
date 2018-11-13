@@ -4,7 +4,7 @@ import { BlogsContainer, BlogContainer } from './components/blog';
 import { Admin, Edit, Write } from './components/admin'
 import { PrivateRoute, Login, Logout } from './components/auth';
 import { AuthorContainer, AuthorsContainer } from './components/author';
-import Home from './home/home';
+import Home from './components/home/home';
 import './styles.css';
 
 class App extends Component {

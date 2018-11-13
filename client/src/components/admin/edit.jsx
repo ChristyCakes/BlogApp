@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import Nav from '../nav';
+import Nav from '../home/nav';
 
 class Edit extends Component {
     constructor(props) {
