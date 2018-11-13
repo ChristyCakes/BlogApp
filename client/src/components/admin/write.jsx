@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import Nav from './nav';
+import Nav from '../nav';
 
 class Write extends Component {
     constructor(props) {
@@ -78,4 +78,4 @@ class Write extends Component {
     };
 };
 
-export default Write;
+export { Write };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Blog from './blog';
-import * as blogsService from '../services/blogs';
+import * as blogsService from '../../services/blogs';
 
 class BlogContainer extends Component {
     constructor() {

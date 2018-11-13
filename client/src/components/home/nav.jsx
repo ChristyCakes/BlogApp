@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom';
-import { AuthButton } from './auth';
+import { AuthButton } from '../auth';
 
 const Nav = (props) => {
     return (

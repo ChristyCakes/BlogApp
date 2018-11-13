@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { BlogsContainer, BlogContainer, AuthorsContainer, AuthorContainer, Write, Home } from './components';
-import { Admin, Edit } from './components/admin'
+import { BlogsContainer, BlogContainer } from './components/blog';
+import { Admin, Edit, Write } from './components/admin'
 import { PrivateRoute, Login, Logout } from './components/auth';
+import { AuthorContainer, AuthorsContainer } from './components/author';
+import Home from './home/home';
 import './styles.css';
 
 class App extends Component {

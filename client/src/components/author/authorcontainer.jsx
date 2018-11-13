@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Author from './author';
-import * as authorsService from '../services/authors';
+import * as authorsService from '../../services/authors';
 
 class AuthorContainer extends Component {
     constructor() {

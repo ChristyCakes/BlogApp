@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Nav from './nav';
+import Nav from '../nav';
 
 const Authors = (props) => {
     let authorDisplayEvens = [];
