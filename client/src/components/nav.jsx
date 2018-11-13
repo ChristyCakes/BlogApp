@@ -14,4 +14,3 @@ const Nav = (props) => {
 }
 
 export default Nav;
-// export { Nav };
