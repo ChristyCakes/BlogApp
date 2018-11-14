@@ -3,9 +3,11 @@ import Nav from '../home/nav';
 
 const Author = (props) => {
     let authorblogs = [];
-    (props.authorblogs).forEach(item => {
+    (props.authorblogs).forEach(element => {
         authorblogs.push(
-            <h4>{item.blogtitle}</h4>
+            <div>
+                <h4>{element.blogtitle}</h4>
+            </div>
         )
     })
     return (

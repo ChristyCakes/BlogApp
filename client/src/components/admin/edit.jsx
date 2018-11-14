@@ -42,12 +42,12 @@ class Edit extends Component {
     // };
 
     render() {
-        console.log("this.props.location.state:", this.props.location.state)
+        // blogid "this.props.location.state.blogid")
         return (
             <div>
                 <Nav />
-                {/* <h1>Edit Your Blog Post</h1>
-                <h3>Author: {this.props.location.state.name}</h3>
+                <h1>Edit Your Blog Post</h1>
+                <h3>Author: {this.props.location.state.author}</h3>
                 <form action="">
                     <input
                         type="text"
@@ -56,7 +56,7 @@ class Edit extends Component {
                         id="title"
                         name="title"
                         onChange={this.inputHandler}
-                        defaultValue={this.state.title}
+                        defaultValue={this.props.location.state.blogtitle}
                     />
                     <textarea
                         type="text"
@@ -66,14 +66,14 @@ class Edit extends Component {
                         id="content"
                         name="content"
                         onChange={this.inputHandler}
-                        defaultValue={this.state.content}
+                        defaultValue={this.props.location.state.content}
                     />
                     <button
-                        onClick={this.postblog}
-                        id="create">
-                        Create
+                        onClick={this.puttblog}
+                        id="update">
+                        Update
                     </button>
-                </form> */}
+                </form>
             </div>
         );
     };

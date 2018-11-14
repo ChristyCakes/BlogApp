@@ -18,7 +18,7 @@ class AdminBlogContainer extends Component {
     }
 
     render() {
-        return <AdminBlogs {...this.props} adminblogs={this.state.adminblogs}/>
+        return <AdminBlogs {...this.state }/>
     }
 }
 

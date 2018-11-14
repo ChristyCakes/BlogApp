@@ -7,10 +7,7 @@ import AdminBlogContainer from './adminblogcontainer'
 class Admin extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            id: meData.id,
-            name: meData.name       // need name?
-        }
+        this.state = { id: meData.id }
     }
 
     render() {

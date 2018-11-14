@@ -10,7 +10,7 @@ class AuthorContainer extends Component {
 
     componentDidMount() {
         authorsService.one(this.props.match.params.id)
-            .then(data => { this.setState({ authorblogs: data[0] }) })
+            .then(data => { this.setState({ authorblogs: data[0] })})
             .catch(err => {
                 alert("Author's blogs failed to load")
                 console.log(err);
