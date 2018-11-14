@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Redirect, Component } from 'react';
 import 'isomorphic-fetch';
 import Nav from '../home/nav';
+import * as blogsService from '../../services/blogs';
 
 class Edit extends Component {
     constructor(props) {
@@ -10,39 +11,37 @@ class Edit extends Component {
             title: "",
             content: ""
         };
-        // this.putblog = this.putblog.bind(this);
-        // this.inputHandler = this.inputHandler.bind(this);
+        this.putblog = this.putblog.bind(this);
+        this.inputHandler = this.inputHandler.bind(this);
     };
 
-    // inputHandler(event) {
-    //     this.setState({ [event.target.name]: event.target.value });
-    // };
+    inputHandler(event) {
+        this.setState({ [event.target.name]: event.target.value });
+    };
 
-    // putblog(event) {
-    //     event.preventDefault();
-        // fetch('http://127.0.0.1:3000/api/blogs/', {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         author: this.props.location.state.name,
-        //         // authorid: this.props.location.state.id,
-        //         title: this.state.title,
-        //         content: this.state.content,
-        //     })
-        // })
-    //         .then(response => response.json())
-    //         .then(promise => promise.id)
-    //         .then(id => {return this.props.history.push(`blog/${id}/`)})
-    //         .catch(err => {
-    //             alert("Error: Your blog was not created");
-    //             console.log(err)
-    //         });
-    // };
+    putblog(event) {
+        event.preventDefault();
+        blogsService.update(this.props.location.state.blogid, {
+
+            author: this.props.location.state.author,
+            title: this.state.title,
+            content: this.state.content,
+
+        })
+
+
+            // .then(response => response.json())
+            // .then(promise => promise.id)
+            // .then(id => {return this.props.history.push(`blog/${id}/`)})
+            // .then(() => { <Redirect to={`localhost:3000/blog/${this.props.location.state.blogid}`} /> })
+            .then(() => { <Redirect to="localhost:3000" /> })
+            .catch(err => {
+                alert("Error: Your blog was not created");
+                console.log(err)
+            });
+    };
 
     render() {
-        // blogid "this.props.location.state.blogid")
         return (
             <div>
                 <Nav />
@@ -69,7 +68,7 @@ class Edit extends Component {
                         defaultValue={this.props.location.state.content}
                     />
                     <button
-                        onClick={this.puttblog}
+                        onClick={this.putblog}
                         id="update">
                         Update
                     </button>

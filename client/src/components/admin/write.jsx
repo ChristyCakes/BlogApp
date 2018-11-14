@@ -45,7 +45,7 @@ class Write extends Component {
         return (
             <div>
                 <Nav />
-                <h1>Create a Blog Post</h1>
+                <h1>Create a New Blog Post</h1>
                 <h3>Author: {this.props.location.state.name}</h3>
                 <form action="">
                     <input

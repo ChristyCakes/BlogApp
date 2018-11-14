@@ -50,4 +50,28 @@ router.delete('/:id', (req, res) => {
         })
 })
 
+router.put('/:id', (req, res) => {
+    let id = req.params.id
+    let blog = req.body;
+    blogs.update(id, blog)
+        .then(results => {
+            res.json(results)
+        })
+        .catch((e) => {
+            console.log(e);
+            res.sendStatus(500)
+        })
+})
+
+router.delete('/:id', (req, res) => {
+    let id = req.params.id
+    blogs.delete(id)
+        .then(results => {
+            res.json(results)
+        }).catch(e => {
+            console.log(e)
+            res.sendStatus(500)
+        })
+})
+
 export default router;
