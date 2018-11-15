@@ -28,13 +28,7 @@ class Edit extends Component {
             content: this.state.content,
 
         })
-
-
-            // .then(response => response.json())
-            // .then(promise => promise.id)
-            // .then(id => {return this.props.history.push(`blog/${id}/`)})
-            // .then(() => { <Redirect to={`localhost:3000/blog/${this.props.location.state.blogid}`} /> })
-            .then(() => { <Redirect to="localhost:3000" /> })
+            .then(() => this.props.history.push(`/blog/${this.props.location.state.blogid}`))
             .catch(err => {
                 alert("Error: Your blog was not created");
                 console.log(err)
