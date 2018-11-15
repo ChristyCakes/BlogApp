@@ -8,16 +8,18 @@ class StoredProcedure {
         this.StoredProcedure = spName;
     }
 
+    // add placeholder string?
     call(param) {
         let sql = `CALL ${this.StoredProcedure}(${param})`;
         let results = executeQuery(sql, [param]);
         return results;
     }
 
-    async call2(author) {
-        let placeholderString = generatePlaceholders(author);
-        let sql =  `CALL ${this.StoredProcedure}(${placeholderString}, last_insert_id())`;
-        let results = await executeQuery(sql, [author]);
+    async call2(author, id) {
+        // let placeholderStringAuthor = generatePlaceholders(author);
+        // let placeholderStringId = generatePlaceholders(id);
+        let sql =  `CALL ${this.StoredProcedure}(?, ?)`;
+        let results = await executeQuery(sql, [author, id]);
         return results;
     }
 }

@@ -30,9 +30,11 @@ router.get('/:id?', (req, res) => {
 router.post('/', (req, res) => {
     let blog = req.body;
     blogs.insert(blog)
-        .then(results => {
-            res.json(results)
-        }).then(() => spAuthorBlog.call2(blog.author))
+        // .then(results => {
+        //     res.json(results)
+        // })
+        // .then(id => console.log("id here: ", id))
+        .then((id) => spAuthorBlog.call2(blog.author, id.id))
         .catch((e) => {
             console.log(e);
             res.sendStatus(500)

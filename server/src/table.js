@@ -1,3 +1,5 @@
+// add in placeholder strings ? for queries with parameters
+
 import { executeQuery, generatePlaceholders } from './config/db';
 
 class Table {
@@ -36,6 +38,7 @@ class Table {
 
         if (this.tableName === "authors") {
             let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString}) on DUPLICATE KEY UPDATE email = VALUES(email);`;
+            // join concats "author", "title", "content" to "author, title, content"
             let results = await executeQuery(sql, values);
             return { id: results.insertId };
         } else {

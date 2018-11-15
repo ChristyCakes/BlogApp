@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'isomorphic-fetch';
+// import 'isomorphic-fetch';
 import Nav from '../home/nav';
 import * as blogsService from '../../services/blogs';
 

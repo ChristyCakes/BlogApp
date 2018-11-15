@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
 import Nav from '../home/nav';
+import * as blogsService from '../../services/blogs';
 
 class Write extends Component {
     constructor(props) {
@@ -20,21 +21,14 @@ class Write extends Component {
 
     postblog(event) {
         event.preventDefault();
-        fetch('http://127.0.0.1:3000/api/blogs/', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                author: this.props.location.state.name,
-                // authorid: this.props.location.state.id,
-                title: this.state.title,
-                content: this.state.content,
-            })
+        blogsService.insert({
+            author: this.props.location.state.author,
+            title: this.state.title,
+            content: this.state.content
         })
-            .then(response => response.json())
-            .then(promise => promise.id)
-            .then(id => {return this.props.history.push(`blog/${id}/`)})
+            // .then(response => response.json())
+            // .then(promise => promise.id)
+            // .then(id => { return this.props.history.push(`blog/${id}/`) })
             .catch(err => {
                 alert("Error: Your blog was not created");
                 console.log(err)
@@ -46,7 +40,7 @@ class Write extends Component {
             <div>
                 <Nav />
                 <h1>Create a New Blog Post</h1>
-                <h3>Author: {this.props.location.state.name}</h3>
+                <h3>Author: {this.props.location.state.author}</h3>
                 <form action="">
                     <input
                         type="text"
