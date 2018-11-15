@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Delete from './delete';
 
 const AdminBlogs = (props) => {
     let adminblogs = [];
@@ -12,6 +13,11 @@ const AdminBlogs = (props) => {
                     state: { ...element }
                 }}
                     className="btn btn-secondary edit">Edit</Link>
+                <Link to={{
+                    pathname: `/delete/${element.blogid}`,
+                    state: { ...element }
+                }}
+                    className="btn btn-secondary delete">Del</Link>
             </div>
         )
     })

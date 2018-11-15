@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { BlogsContainer, BlogContainer } from './components/blog';
-import { Admin, Edit, Write } from './components/admin'
+import { Admin, Edit, Write, Delete } from './components/admin'
 import { PrivateRoute, Login, Logout } from './components/auth';
 import { AuthorContainer, AuthorsContainer } from './components/author';
 import Home from './components/home/home';
@@ -24,6 +24,7 @@ class App extends Component {
                         <PrivateRoute path="/api/users/me" component={Admin} />
                         <PrivateRoute path="/write" component={Write} />
                         <PrivateRoute path="/edit/:id" component={Edit} />
+                        <PrivateRoute path="/delete/:id" component={Delete} />
                     </Switch>
                 </Fragment>
             </Router>

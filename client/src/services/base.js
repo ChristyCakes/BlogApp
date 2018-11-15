@@ -40,7 +40,7 @@ function json(url, method = 'GET', payload = {}) {
         })
     };
 
-    if (method === 'GET') {
+    if (method === 'GET' || method === 'DELETE') {
         delete data.body;
     }
 
