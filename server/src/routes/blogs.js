@@ -29,12 +29,14 @@ router.get('/:id?', (req, res) => {
 
 router.post('/', (req, res) => {
     let blog = req.body;
+    let blogid = ""
     blogs.insert(blog)
-        // .then(results => {
-        //     res.json(results)
-        // })
-        // .then(id => console.log("id here: ", id))
-        .then((id) => spAuthorBlog.call2(blog.author, id.id))
+        .then((id) => {
+            blogid = id.id
+            spAuthorBlog.call2(blog.author, blogid)})
+        .then(() => {
+            res.send({blogid: blogid})
+        })
         .catch((e) => {
             console.log(e);
             res.sendStatus(500)

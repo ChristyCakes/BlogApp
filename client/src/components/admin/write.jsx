@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'isomorphic-fetch';
 import Nav from '../home/nav';
 import * as blogsService from '../../services/blogs';
 
@@ -26,9 +25,7 @@ class Write extends Component {
             title: this.state.title,
             content: this.state.content
         })
-            // .then(response => response.json())
-            // .then(promise => promise.id)
-            // .then(id => { return this.props.history.push(`blog/${id}/`) })
+            .then(response => { return this.props.history.push(`blog/${response.blogid}/`) })
             .catch(err => {
                 alert("Error: Your blog was not created");
                 console.log(err)

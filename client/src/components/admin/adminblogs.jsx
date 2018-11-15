@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Delete from './delete';
 
 const AdminBlogs = (props) => {
     let adminblogs = [];
@@ -28,7 +27,7 @@ const AdminBlogs = (props) => {
                 pathname: '/write',
                 state: { ...props.adminblogs[0]}
             }} 
-            className="btn btn-outline-secondary mt-5"
+            className="btn btn-outline-secondary mt-4"
             >Create a New Blog Post</Link>           </div>
         </div>)
 }

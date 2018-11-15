@@ -16,10 +16,9 @@ class StoredProcedure {
     }
 
     async call2(author, id) {
-        // let placeholderStringAuthor = generatePlaceholders(author);
-        // let placeholderStringId = generatePlaceholders(id);
         let sql =  `CALL ${this.StoredProcedure}(?, ?)`;
         let results = await executeQuery(sql, [author, id]);
+        // return { id: results.insertId };
         return results;
     }
 }
