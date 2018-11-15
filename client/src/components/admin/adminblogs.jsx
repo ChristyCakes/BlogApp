@@ -20,16 +20,7 @@ const AdminBlogs = (props) => {
             </div>
         )
     })
-    return (
-        <div className="text-info text-center">
-            <div>{adminblogs}</div>
-            <div><Link to={{
-                pathname: '/write',
-                state: { ...props.adminblogs[0]}
-            }} 
-            className="btn btn-outline-secondary mt-4"
-            >Create a New Blog Post</Link>           </div>
-        </div>)
+    return <div className="text-info text-center">{adminblogs}</div>
 }
 
 export default AdminBlogs;

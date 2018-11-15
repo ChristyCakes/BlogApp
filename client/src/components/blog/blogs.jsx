@@ -12,7 +12,7 @@ const Blogs = (props) => {
                     <Link className="textlink" to={`/blog/${element.id}`}>
                         <h4 >{element.title}</h4>
                     </Link>
-                    <h5>By {element.author}</h5>
+                    <h5 className="text-white">By {element.author}</h5>
                     <hr />
                 </div>
             )} else {
@@ -21,7 +21,7 @@ const Blogs = (props) => {
                     <Link className="textlink" to={`/blog/${element.id}`}>
                         <h4 >{element.title}</h4>
                     </Link>
-                    <h5>By {element.author}</h5>
+                    <h5 className="text-white">By {element.author}</h5>
                     <hr />
                 </div>
             )}

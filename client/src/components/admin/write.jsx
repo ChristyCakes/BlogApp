@@ -1,3 +1,5 @@
+// set style with styles.css -- change the repeats in bootstrap styles
+
 import React, { Component } from 'react';
 import Nav from '../home/nav';
 import * as blogsService from '../../services/blogs';

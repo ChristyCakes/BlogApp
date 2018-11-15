@@ -16,7 +16,7 @@ const Authors = (props) => {
                 }}>
                 <h4>{element.name}</h4>
                 </Link>
-                <p>{element.email}</p>
+                <p className="text-white">{element.email}</p>
                 <hr />
                 </div>
             );
@@ -30,7 +30,7 @@ const Authors = (props) => {
                 }}>
                 <h4>{element.name}</h4>
                 </Link>
-                <p>{element.email}</p>
+                <p className="text-white">{element.email}</p>
                 <hr />
                 </div>
             );
