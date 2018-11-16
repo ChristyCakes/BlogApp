@@ -9,8 +9,8 @@ import fire from '../images/fireplace.jpg';
 const Featured = (props) => {
     return (
         <div>
-            <h2 className="text-info text-center mt-5">Featured Blogs</h2>
-            <div className="cards">
+            <h2 className="heading center">Featured Blogs</h2>
+            <div className="cards flexrow flexend">
                 <div className="card col-3">
                     <img className="card-img-top my-3" src={reactlogo} alt="Card image cap" />
                     <div className="card-body">

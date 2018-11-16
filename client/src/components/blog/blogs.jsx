@@ -9,19 +9,19 @@ const Blogs = (props) => {
         if (index % 2 === 0) {
             blogDisplayEvens.push(
                 <div className = "col-md-6" key={element.id}>
-                    <Link className="textlink" to={`/blog/${element.id}`}>
+                    <Link className="link aqua" to={`/blog/${element.id}`}>
                         <h4 >{element.title}</h4>
                     </Link>
-                    <h5 className="text-white">By {element.author}</h5>
+                    <h5 className="white">By {element.author}</h5>
                     <hr />
                 </div>
             )} else {
             blogDisplayOdds.push(
                 <div className = "col-md-6" key={element.id}>
-                    <Link className="textlink" to={`/blog/${element.id}`}>
+                    <Link className="link aqua" to={`/blog/${element.id}`}>
                         <h4 >{element.title}</h4>
                     </Link>
-                    <h5 className="text-white">By {element.author}</h5>
+                    <h5 className="white">By {element.author}</h5>
                     <hr />
                 </div>
             )}
@@ -30,7 +30,7 @@ const Blogs = (props) => {
     return (
         <div>
             <Nav />
-            <h2 className="text-secondary text-center my-5">Rainy Day Blogs</h2>
+            <h2 className="heading text-center mb-5">Rainy Day Blogs</h2>
             <div className="row mx-5">{blogDisplayEvens}{blogDisplayOdds}</div>
         </div>
     );

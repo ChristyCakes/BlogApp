@@ -5,7 +5,7 @@ const AdminBlogs = (props) => {
     let adminblogs = [];
     (props.adminblogs).forEach(element => {
         adminblogs.push(
-            <div className='horiz align'>
+            <div className='flexrow baseline'>
                 <h4>{element.blogtitle}</h4>
                 <Link to={{
                     pathname: `/edit/${element.blogid}`,
@@ -20,7 +20,7 @@ const AdminBlogs = (props) => {
             </div>
         )
     })
-    return <div className="text-info text-center">{adminblogs}</div>
+    return <div className="link aqua text-center">{adminblogs}</div>
 }
 
 export default AdminBlogs;

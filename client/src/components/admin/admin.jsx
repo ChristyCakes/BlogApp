@@ -16,9 +16,9 @@ class Admin extends Component {
 
     render() {
         return (
-            <div>
+            <div className="flexcol center">
                 <Nav />
-                <h2 className="text-secondary text-center mt-5">Your Blogs</h2>
+                <h2 className="heading">Your Blog Posts</h2>
                 <hr/>
                 <AdminBlogContainer {...this.state} />
                 <Link to={{

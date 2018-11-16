@@ -36,11 +36,10 @@ class Edit extends Component {
 
     render() {
         return (
-            <div>
+            <div className='flexcol'>
                 <Nav />
-                <h1>Edit Your Blog Post</h1>
-                <h3>Author: {this.props.location.state.author}</h3>
-                <form action="">
+                <h1 className='heading mb-5 marginleft10'>Edit Your Blog Post</h1>
+                <form>
                     <input
                         type="text"
                         placeholder="Title"
@@ -50,6 +49,8 @@ class Edit extends Component {
                         onChange={this.inputHandler}
                         defaultValue={this.props.location.state.blogtitle}
                     />
+                    <h3 className='white'>By {this.props.location.state.author}</h3>
+                    <div className='flexrow flexend'>
                     <textarea
                         type="text"
                         placeholder="Blog Body"
@@ -61,10 +62,13 @@ class Edit extends Component {
                         defaultValue={this.props.location.state.content}
                     />
                     <button
+                        className='btn btn-info'
                         onClick={this.putblog}
                         id="update">
                         Update
                     </button>
+                    </div>
+                    
                 </form>
             </div>
         );

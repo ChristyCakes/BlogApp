@@ -9,28 +9,28 @@ const Authors = (props) => {
         if (index %2 === 0) {
             authorDisplayEvens.push(
                 <div className = "col-md-6" key = {element.id}>
-                <Link className="textlink" to={{
+                <Link className="link aqua" to={{
                     pathname: `/author/${element.id}`,
                     state: { authorname: element.name },
                     style: { textDecoration: 'none' }
                 }}>
                 <h4>{element.name}</h4>
                 </Link>
-                <p className="text-white">{element.email}</p>
+                <p className="white">{element.email}</p>
                 <hr />
                 </div>
             );
         } else {
             authorDisplayOdds.push(
                 <div className = "col-md-6" key = {element.id}>
-                <Link className="textlink" to={{
+                <Link className="link aqua" to={{
                     pathname: `/author/${element.id}`,
                     state: { authorname: element.name },
                     style: { textDecoration: 'none' }
                 }}>
                 <h4>{element.name}</h4>
                 </Link>
-                <p className="text-white">{element.email}</p>
+                <p className="white">{element.email}</p>
                 <hr />
                 </div>
             );
@@ -41,7 +41,7 @@ const Authors = (props) => {
     return (
         <div>
             <Nav />
-            <h2 className="text-secondary text-center my-5">Rainy Day Authors</h2>
+            <h2 className="heading center mb-5">Rainy Day Authors</h2>
             <div className="row mx-5">{authorDisplayEvens}{authorDisplayOdds}</div>
         </div>
     );

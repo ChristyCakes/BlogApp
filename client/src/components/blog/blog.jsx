@@ -6,9 +6,9 @@ const Blog = (props) => {
     return (
         <div>
             <Nav />
-            <div className="singleblog">
-            <h1 className="text-secondary mt-5">{props.blog.title}</h1>
-            <h4 className="text-info">By {props.blog.author}</h4>
+            <div className="marginleft10">
+            <h1 className="heading">{props.blog.title}</h1>
+            <h4 className="white">By {props.blog.author}</h4>
             <p className="">{props.blog.content}</p>
             </div>
         </div>
