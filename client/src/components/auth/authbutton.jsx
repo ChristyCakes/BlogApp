@@ -10,5 +10,4 @@ const AuthButton = (props) => {
     }
 };
 
-// export default AuthButton;
 export { AuthButton };

@@ -21,5 +21,4 @@ const PrivateRoute = (props) => {
     );
 };
 
-// export default PrivateRoute;
 export { PrivateRoute }

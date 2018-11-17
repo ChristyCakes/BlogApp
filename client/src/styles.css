@@ -56,19 +56,9 @@ body {
     box-shadow: 10px 10px 5px 0px rgba(204,202,204,1)
 }
 
-
-/*  */
-.edit {
+.minibutton {
     font-size: 10px;
     font-weight: bold;
-    margin-left: 1rem;
-    padding: 1px;
-}
-
-.delete {
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 5px;
     padding: 1px;
 }
 

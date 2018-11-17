@@ -11,12 +11,12 @@ const AdminBlogs = (props) => {
                     pathname: `/edit/${element.blogid}`,
                     state: { ...element }
                 }}
-                    className="btn btn-secondary edit">Edit</Link>
+                    className="btn btn-secondary minibutton ml-2">Edit</Link>
                 <Link to={{
                     pathname: `/delete/${element.blogid}`,
                     state: { ...element }
                 }}
-                    className="btn btn-secondary delete">Del</Link>
+                    className="btn btn-secondary minibutton ml-1">Del</Link>
             </div>
         )
     })

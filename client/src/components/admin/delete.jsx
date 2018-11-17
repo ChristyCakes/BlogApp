@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import 'isomorphic-fetch';
 import * as blogsService from '../../services/blogs';
 
 class Delete extends Component {

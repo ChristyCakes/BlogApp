@@ -15,7 +15,6 @@ class Login extends Component {
             checkingLogin: true,
             me: ''
         };
-        // this.inputHandler = this.inputHandler.bind(this);
     }
 
     componentDidMount() {
@@ -40,11 +39,6 @@ class Login extends Component {
                 }
             });
     }
-
-    // inputHandler(event) {
-    //     this.setState({ [event.target.name]: event.target.value })
-    // }
-
 
     handleEmailChange(value) {
         this.setState({ email: value });
@@ -72,10 +66,6 @@ class Login extends Component {
                 <Nav />
                 <h2 className="text-secondary text-center mt-5">Login to continue</h2>
                 <form className="text-center" onSubmit={(e) => this.login(e)}>
-                    {/* <div className="form-group">
-                        <label htmlFor="name">First and Last Name</label>
-                        <input name="name" className="form-control" type="name" onChange={this.inputHandler} required />
-                    </div> */}
                     <div className="form-group">
                         <input
                             placeholder="Email"
@@ -106,5 +96,4 @@ class Login extends Component {
     }
 }
 
-// export default Login;
 export { Login };

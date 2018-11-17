@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Featured from './featured';
+import FeaturedContainer from './featuredcontainer';
 import Nav from './nav';
 
 class Home extends Component {
@@ -17,7 +17,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <Nav />
-                <Featured />
+                <FeaturedContainer />
             </div>
         )
     }

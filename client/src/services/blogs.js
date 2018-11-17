@@ -1,7 +1,5 @@
 import * as baseService from './base';
 
-
-// set up if else for all/one
 function all() {
     return baseService.get('/api/blogs');
 }
