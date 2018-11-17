@@ -12,7 +12,7 @@ router.get('/:id?', (req, res) => {
         blogs.getOne(id)
             .then(blog => {
                 res.json(blog)
-            }).catch((e) => {             // do I need this catch or is last one enough?
+            }).catch((e) => {             
                 console.log(e);
                 res.sendStatus(500);
             });
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
     blogs.insert(blog)
         .then((id) => {
             blogid = id.id
-            spAuthorBlog.call2(blog.author, blogid)})
+            spAuthorBlog.call([blog.author, blogid])})
         .then(() => {
             res.send({blogid: blogid})
         })
