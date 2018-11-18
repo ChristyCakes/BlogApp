@@ -1,21 +1,18 @@
 import React from 'react';
 import Nav from '../home/nav';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const Author = (props) => {
     let authorblogs = [];
     (props.authorblogs).forEach(element => {
-        authorblogs.push(
-            <div>
-                <h4>{element.blogtitle}</h4>
-            </div>
-        )
+        authorblogs.push(<Link className="aqua center link" to={`/blog/${element.blogid}`}><h4>{element.blogtitle}</h4></Link>)
     })
     return (
         <div>
             <Nav />
-            <h1 className="text-secondary text-center mt-5">Blogs by {props.authorname}</h1>
+            <h1 className="heading center">Blogs by {props.authorname}</h1>
             <hr />
-            <div className="text-info text-center">{authorblogs}</div>
+            <div>{authorblogs}</div>
 
         </div>
     )

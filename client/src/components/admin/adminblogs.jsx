@@ -6,7 +6,7 @@ const AdminBlogs = (props) => {
     (props.adminblogs).forEach(element => {
         adminblogs.push(
             <div className='flexrow baseline'>
-                <h4>{element.blogtitle}</h4>
+                <Link className="link aqua center" to={`/blog/${element.blogid}`}><h4>{element.blogtitle}</h4></Link>               
                 <Link to={{
                     pathname: `/edit/${element.blogid}`,
                     state: { ...element }
@@ -23,7 +23,7 @@ const AdminBlogs = (props) => {
     return (
         <div>
             <hr />
-            <div className="link aqua text-center">{adminblogs}</div>
+            <div >{adminblogs}</div>
         </div>
     )
 }

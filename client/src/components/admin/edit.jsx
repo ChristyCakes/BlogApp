@@ -38,11 +38,11 @@ class Edit extends Component {
         return (
             <div className='flexcol'>
                 <Nav />
-                <h1 className='heading mb-5 marginleft10'>Edit Your Blog Post</h1>
-                <hr />
-                <h3 className='white marginleft10'>Author: {this.props.location.state.author}</h3>
+                <h1 className='heading mb-3 marginleft10'>Edit Your Blog Post</h1>
+                <hr></hr>
+                <h4 className='white marginleft10 mb-2'>Author: {this.props.location.state.author}</h4>
                 <form>
-                    <label className='white formtag' for="title">Title:</label>
+                    <label className='white mr-2' for="title"><h4>Title:</h4></label>
                     <input
                         type="text"
                         placeholder="Title"
@@ -52,7 +52,7 @@ class Edit extends Component {
                         onChange={this.inputHandler}
                         defaultValue={this.props.location.state.blogtitle}
                     />
-                    <label className='white formtag flexcol' for="content">Content:</label>
+                    <label className='white flexcol' for="content"><h4>Content:</h4></label>
                     <div className='flexrow flexend'>
                         <textarea
                             type="text"

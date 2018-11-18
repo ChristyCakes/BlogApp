@@ -8,23 +8,25 @@ const Blogs = (props) => {
     (props.blogs).forEach((element, index) => {
         if (index % 2 === 0) {
             blogDisplayEvens.push(
-                <div className = "col-md-6" key={element.id}>
+                <div className="col-md-6" key={element.id}>
                     <Link className="link aqua" to={`/blog/${element.id}`}>
                         <h4 >{element.title}</h4>
                     </Link>
                     <h5 className="white">By {element.author}</h5>
                     <hr />
                 </div>
-            )} else {
+            )
+        } else {
             blogDisplayOdds.push(
-                <div className = "col-md-6" key={element.id}>
+                <div className="col-md-6" key={element.id}>
                     <Link className="link aqua" to={`/blog/${element.id}`}>
                         <h4 >{element.title}</h4>
                     </Link>
                     <h5 className="white">By {element.author}</h5>
                     <hr />
                 </div>
-            )}
+            )
+        }
     });
 
     return (
