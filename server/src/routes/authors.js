@@ -10,7 +10,7 @@ let spByAuthor = new StoredProcedure('spByAuthor');
 router.get('/:id?', (req, res) => {
     let id = req.params.id;
     if (id) {
-        spByAuthor.call(id)
+        spByAuthor.call([id])
             .then(authorblog => {
                 res.json(authorblog)
             }).catch((e) => {

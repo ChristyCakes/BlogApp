@@ -12,7 +12,7 @@ class Home extends Component {
             <div>
                 <div className="jumbotron jumbotron-fluid">
                     <div className="container">
-                        <h1 className="display-4 white" >Rainy Day Blog</h1>
+                        <h1 className="display-4 white">Rainy Day Blog</h1>
                         <p className="lead white">Curl up with a blanket and some coffee and read for hours</p>
                     </div>
                 </div>
