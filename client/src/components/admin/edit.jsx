@@ -39,7 +39,10 @@ class Edit extends Component {
             <div className='flexcol'>
                 <Nav />
                 <h1 className='heading mb-5 marginleft10'>Edit Your Blog Post</h1>
+                <hr />
+                <h3 className='white marginleft10'>Author: {this.props.location.state.author}</h3>
                 <form>
+                    <label className='white formtag' for="title">Title:</label>
                     <input
                         type="text"
                         placeholder="Title"
@@ -49,26 +52,26 @@ class Edit extends Component {
                         onChange={this.inputHandler}
                         defaultValue={this.props.location.state.blogtitle}
                     />
-                    <h3 className='white'>By {this.props.location.state.author}</h3>
+                    <label className='white formtag flexcol' for="content">Content:</label>
                     <div className='flexrow flexend'>
-                    <textarea
-                        type="text"
-                        placeholder="Blog Body"
-                        cols="100"
-                        rows="20"
-                        id="content"
-                        name="content"
-                        onChange={this.inputHandler}
-                        defaultValue={this.props.location.state.content}
-                    />
-                    <button
-                        className='btn btn-info'
-                        onClick={this.putblog}
-                        id="update">
-                        Update
+                        <textarea
+                            type="text"
+                            placeholder="Content"
+                            cols="100"
+                            rows="20"
+                            id="content"
+                            name="content"
+                            onChange={this.inputHandler}
+                            defaultValue={this.props.location.state.content}
+                        />
+                        <button
+                            className='btn btn-info ml-1'
+                            onClick={this.putblog}
+                            id="update">
+                            Update
                     </button>
                     </div>
-                    
+
                 </form>
             </div>
         );

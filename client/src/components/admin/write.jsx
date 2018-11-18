@@ -36,8 +36,8 @@ class Write extends Component {
         return (
             <div>
                 <Nav />
-                <h1>Create a New Blog Post</h1>
-                <h3>Author: {this.props.location.state.author}</h3>
+                <h1 className='heading mb-5 marginleft10'>Create a New Blog Post</h1>
+                <h3 className='white marginleft10'>Author: {this.props.location.state.author}</h3>
                 <form action="">
                     <input
                         type="text"
@@ -48,21 +48,24 @@ class Write extends Component {
                         onChange={this.inputHandler}
                         defaultValue={this.state.title}
                     />
-                    <textarea
-                        type="text"
-                        placeholder="Blog Body"
-                        cols="100"
-                        rows="20"
-                        id="content"
-                        name="content"
-                        onChange={this.inputHandler}
-                        defaultValue={this.state.content}
-                    />
-                    <button
-                        onClick={this.postblog}
-                        id="create">
-                        Create
+                    <div className='flexrow flexend'>
+                        <textarea
+                            type="text"
+                            placeholder="Content"
+                            cols="100"
+                            rows="20"
+                            id="content"
+                            name="content"
+                            onChange={this.inputHandler}
+                            defaultValue={this.state.content}
+                        />
+                        <button
+                            className='btn btn-info ml-1'
+                            onClick={this.postblog}
+                            id="create">
+                            Create
                     </button>
+                    </div>
                 </form>
             </div>
         );

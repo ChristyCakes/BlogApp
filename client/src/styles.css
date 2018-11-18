@@ -76,3 +76,13 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.formtag {
+    font-size: 35px;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+textarea {
+    width: 100%;
+}

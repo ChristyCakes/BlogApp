@@ -20,7 +20,12 @@ const AdminBlogs = (props) => {
             </div>
         )
     })
-    return <div className="link aqua text-center">{adminblogs}</div>
+    return (
+        <div>
+            <hr />
+            <div className="link aqua text-center">{adminblogs}</div>
+        </div>
+    )
 }
 
 export default AdminBlogs;

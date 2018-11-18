@@ -19,7 +19,6 @@ class Admin extends Component {
             <div className="flexcol center">
                 <Nav />
                 <h2 className="heading">Your Blog Posts</h2>
-                <hr/>
                 <AdminBlogContainer {...this.state} />
                 <Link to={{
                 pathname: '/write',
