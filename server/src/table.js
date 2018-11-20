@@ -9,7 +9,7 @@ class Table {
         }
         this.tableName = tableName;
     }
-    
+
     async getOne(id) {
         let sql = `SELECT * FROM ${this.tableName} WHERE id = ${id};`;
         let results = await executeQuery(sql, [id]);
@@ -38,11 +38,11 @@ class Table {
 
         if (this.tableName === "authors") {
             let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString}) on DUPLICATE KEY UPDATE email = VALUES(email);`;
-            // join concats "author", "title", "content" to "author, title, content"
             let results = await executeQuery(sql, values);
             return { id: results.insertId };
         } else {
             let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString});`;
+            // join concats "author", "title", "content" to "author, title, content"
             let results = await executeQuery(sql, values);
             return { id: results.insertId };
         }
