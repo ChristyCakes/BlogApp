@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Redirect from 'react-router-dom';
 import Nav from '../home/nav';
 import * as authorsService from '../../services/authors';
+import * as userService from '../../services/user';
 
 class Register extends Component {
     constructor(props) {
@@ -25,8 +27,8 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password
         })
-            // change later to automatically login and redirect to admin page
-            .then(() => this.props.history.push('/authors'))
+            // .then(() => userService.login(this.state.email, this.state.password))
+            // .then(() => <Redirect to='/admin' />)
             .catch(err => {
                 alert("Error: Registration Unsuccessful");
                 console.log(err)

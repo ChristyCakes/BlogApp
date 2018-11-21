@@ -1,7 +1,5 @@
 import * as baseService from './base';
-
 let loggedIn = false;
-let meData = {};
 
 function isLoggedIn() {
     return loggedIn;
@@ -9,16 +7,13 @@ function isLoggedIn() {
 
 function checkLogin() {
     if (loggedIn) {
-        me()
         return Promise.resolve(true);
     } else {
         baseService.populateAuthToken();
         return me()
-        .then((data) => {
-            meData = data;
+        .then(() => {
             loggedIn = true;
             return Promise.resolve(true);
-
         }).catch(() => {
             return Promise.resolve(false);
         });
@@ -39,7 +34,9 @@ function login(email, password) {
             .then((jsonResponse) => {
                 baseService.setAuthToken(jsonResponse.token);
                 loggedIn = true;
-            });
+            })
+            .then(() => me()
+            )
         } else if (response.status === 401) {
             return response.json()
             .then((jsonResponse) => {

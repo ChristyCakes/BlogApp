@@ -31,9 +31,8 @@ class Login extends Component {
     login(e) {
         e.preventDefault();
         userService.login(this.state.email, this.state.password)
-            .then((data) => {
-                this.setState({ redirectToReferrer: true });
-            }).catch((err) => {
+            .then(data => this.setState({ me: data, redirectToReferrer: true }))       
+            .catch((err) => {
                 if (err.message) {
                     this.setState({ feedbackMessage: err.message });
                 }
@@ -72,9 +71,9 @@ class Login extends Component {
                             id="email"
                             className="col-3"
                             type="email"
-                            onChange={(e) => this.handleEmailChange(e.target.value)} 
-                            required 
-                            />
+                            onChange={(e) => this.handleEmailChange(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="form-group">
                         <input
@@ -84,7 +83,7 @@ class Login extends Component {
                             type="password"
                             onChange={(e) => this.handlePasswordChange(e.target.value)}
                             required
-                            />
+                        />
                     </div>
                     {this.state.feedbackMessage ? (
                         <p>{this.state.feedbackMessage}</p>
