@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import Table from '../table'
 import StoredProcedure from '../storedprocedure';
+import { isLoggedIn, tokenMiddleware } from '../middleware/auth.mw';
 let router = Router();
 
 let blogs = new Table('blogs');
@@ -27,7 +28,7 @@ router.get('/:id?', (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
+router.post('/', tokenMiddleware, isLoggedIn, (req, res) => {
     let blog = req.body;
     let blogid = ""
     blogs.insert(blog)

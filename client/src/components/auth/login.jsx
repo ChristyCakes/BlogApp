@@ -64,8 +64,8 @@ class Login extends Component {
         return (
             <Fragment>
                 <Nav />
-                <h2 className="text-secondary text-center mt-5">Login to continue</h2>
-                <form className="text-center" onSubmit={(e) => this.login(e)}>
+                <h2 className="heading center">Login to continue</h2>
+                <form className="center" onSubmit={(e) => this.login(e)}>
                     <div className="form-group">
                         <input
                             placeholder="Email"
@@ -89,7 +89,7 @@ class Login extends Component {
                     {this.state.feedbackMessage ? (
                         <p>{this.state.feedbackMessage}</p>
                     ) : null}
-                    <input type="submit" value="Login" className="btn btn-info" />
+                    <input type="submit" value="Login" className="btn btn-info btn-sm" />
                 </form>
             </Fragment>
         );

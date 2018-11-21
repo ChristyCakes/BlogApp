@@ -2,7 +2,7 @@ import { Router } from 'express';
 import Table from '../table';
 import StoredProcedure from '../storedprocedure';
 let router = Router();
-import { tokenMiddleware, isLoggedIn } from '../middleware/auth.mw';
+import { generateHash } from '../utils/security'
 
 let authors = new Table('authors');
 let spByAuthor = new StoredProcedure('spByAuthor');
@@ -30,12 +30,18 @@ router.get('/:id?', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    authors.insert(req.body)
-        .then(results => {
-            res.json(results)
-        }).catch((e) => {
-            console.log(e);
-            res.sendStatus(500)
+    generateHash(req.body.password)
+        .then(hash => {
+            authors.insert({
+                name: req.body.name,
+                email: req.body.email,
+                hash: hash
+            }).then(results => {
+                res.json(results)
+            }).catch((e) => {
+                console.log(e);
+                res.sendStatus(500)
+            })
         })
 })
 

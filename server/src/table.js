@@ -35,17 +35,10 @@ class Table {
         let columns = Object.keys(row);
         let values = Object.values(row);
         let placeholderString = generatePlaceholders(values);
-
-        if (this.tableName === "authors") {
-            let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString}) on DUPLICATE KEY UPDATE email = VALUES(email);`;
-            let results = await executeQuery(sql, values);
-            return { id: results.insertId };
-        } else {
             let sql = `INSERT INTO ${this.tableName} (${columns.join(',')}) VALUES (${placeholderString});`;
             // join concats "author", "title", "content" to "author, title, content"
             let results = await executeQuery(sql, values);
             return { id: results.insertId };
-        }
     }
 
     update(id, row) {
