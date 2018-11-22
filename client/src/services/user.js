@@ -35,8 +35,6 @@ function login(email, password) {
                 baseService.setAuthToken(jsonResponse.token);
                 loggedIn = true;
             })
-            .then(() => me()
-            )
         } else if (response.status === 401) {
             return response.json()
             .then((jsonResponse) => {

@@ -22,7 +22,7 @@ class App extends Component {
                         <Route path="/login" component={Login} />
                         <Route path="/logout" component={Logout} />
                         <Route path="/register" component={Register} />
-                        <PrivateRoute path="/api/users/me" component={Admin} />
+                        <PrivateRoute path="/admin" component={Admin} />
                         <PrivateRoute path="/write" component={Write} />
                         <PrivateRoute path="/edit/:id" component={Edit} />
                         <PrivateRoute path="/delete/:id" component={Delete} />

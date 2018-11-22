@@ -27,10 +27,8 @@ class Register extends Component {
             password: this.state.password
         })
             .then(() => userService.login(this.state.email, this.state.password))
-            .then((meData) => (this.props.history.push({
-                pathname: '/api/users/me',
-                state: { me: meData }
-            }))).catch(err => {
+            .then((meData) => (this.props.history.push('/admin')))
+            .catch(err => {
                 alert("Error: Registration Unsuccessful");
                 console.log(err)
             })
