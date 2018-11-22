@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Redirect from 'react-router-dom';
 import Nav from '../home/nav';
 import * as authorsService from '../../services/authors';
 import * as userService from '../../services/user';
@@ -10,7 +9,7 @@ class Register extends Component {
         this.state = {
             name: "",
             email: "",
-            password: ""
+            password: "",
         };
         this.postauthor = this.postauthor.bind(this);
         this.inputHandler = this.inputHandler.bind(this);
@@ -27,13 +26,15 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password
         })
-            // .then(() => userService.login(this.state.email, this.state.password))
-            // .then(() => <Redirect to='/admin' />)
-            .catch(err => {
+            .then(() => userService.login(this.state.email, this.state.password))
+            .then((meData) => (this.props.history.push({
+                pathname: '/api/users/me',
+                state: { me: meData }
+            }))).catch(err => {
                 alert("Error: Registration Unsuccessful");
                 console.log(err)
-            });
-    };
+            })
+    }
 
     render() {
         return (
