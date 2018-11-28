@@ -5,8 +5,8 @@ let authToken = '';
 
 function setAuthToken(token) {
     authToken = `Bearer ${token}`;
-    if (localStorage) {
-        localStorage.setItem(AUTH_TOKEN_KEY, authToken);
+    if (localStorage) {                                         // checking browser's ability to store the auth token to use for each logged in request
+        localStorage.setItem(AUTH_TOKEN_KEY, authToken);        // saves auth token in local storage
     }
 }
 
@@ -17,11 +17,11 @@ function clearAuthToken() {
     }
 }
 
-function populateAuthToken() {
+function populateAuthToken() {                      
     if (localStorage) {
-        let token = localStorage.getItem(AUTH_TOKEN_KEY);
+        let token = localStorage.getItem(AUTH_TOKEN_KEY);       // checks if the token was previously saved in local storage
         if (token && token !== null) {
-            authToken = token;
+            authToken = token;                                  // re-populates authToken variable with what local storage saved
         }
     }
 }

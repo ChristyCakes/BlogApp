@@ -30,7 +30,10 @@ class Login extends Component {
     login(e) {
         e.preventDefault();
         userService.login(this.state.email, this.state.password)
-            .then(() => this.setState({ redirectToReferrer: true }))       
+            .then((meData) => {
+                localStorage.setItem("me", JSON.stringify(meData))
+                this.setState({ redirectToReferrer: true})
+            })  
             .catch((err) => {
                 if (err.message) {
                     this.setState({ feedbackMessage: err.message });

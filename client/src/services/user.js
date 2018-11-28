@@ -5,13 +5,13 @@ function isLoggedIn() {
     return loggedIn;
 }
 
-function checkLogin() {
-    if (loggedIn) {
+function checkLogin() {                     
+    if (loggedIn) {                         // if user is logged in, return true
         return Promise.resolve(true);
-    } else {
-        baseService.populateAuthToken();
-        return me()
-        .then(() => {
+    } else {                                // if not logged in, get auth token in local storage, if there
+        baseService.populateAuthToken();          
+        return me()                             
+        .then(() => {                      
             loggedIn = true;
             return Promise.resolve(true);
         }).catch(() => {
@@ -34,6 +34,7 @@ function login(email, password) {
             .then((jsonResponse) => {
                 baseService.setAuthToken(jsonResponse.token);
                 loggedIn = true;
+                return me();
             })
         } else if (response.status === 401) {
             return response.json()

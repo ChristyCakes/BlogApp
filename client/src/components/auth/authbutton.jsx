@@ -7,7 +7,8 @@ const AuthButton = (props) => {
         return (
             <div>
                 <Link className="btn btn-info m-1" to="/logout">Logout</Link>
-                <Link className='btn btn-info m-1' to='/admin'>My Posts</Link>
+                <Link className='btn btn-info m-1' to={{ pathname: '/admin' }}
+                    >My Posts</Link>
             </div>
         );
     } else {
@@ -17,7 +18,6 @@ const AuthButton = (props) => {
                 <Link className="btn btn-info m-1" to="/register">Register</Link>
             </div>
         )
-
     }
 };
 

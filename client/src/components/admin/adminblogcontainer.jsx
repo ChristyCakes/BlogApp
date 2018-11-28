@@ -9,7 +9,8 @@ class AdminBlogContainer extends Component {
     }
 
     componentDidMount() {
-        authorsService.one(this.props.id)
+        let meData = JSON.parse((localStorage.getItem("me")))
+        authorsService.one(meData.id)
             .then(data => { this.setState({ adminblogs: data[0] }) })
             .catch(err => {
                 alert("Author's blogs failed to load")
@@ -18,7 +19,7 @@ class AdminBlogContainer extends Component {
     }
 
     render() {
-        return <AdminBlogs {...this.state }/>
+        return  <AdminBlogs {...this.state }/>
     }
 }
 
