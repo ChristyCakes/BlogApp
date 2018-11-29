@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const Featured = (props) => {
     return (
@@ -7,7 +7,7 @@ const Featured = (props) => {
             <img className="card-img-top my-3" src={props.img} alt="Card image cap" />
             <div className="card-body">
                 <h5 className="card-title text-secondary">{props.title}</h5>
-                <Link to="/blog/4" className="btn btn-info">Read More</Link>
+                <Link to={`/blog/${props.blogid}`} className="btn btn-info">Read More</Link>
             </div>
         </div>
     )

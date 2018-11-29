@@ -9,12 +9,7 @@ const Admin = (props) => {
             <Nav />
             <h1 className="heading">Your Blog Posts</h1>
             <AdminBlogContainer />
-            <Link to={{
-                pathname: '/write',
-                
-            }}
-                className="btn btn-outline-secondary mt-4"
-            >Create a New Blog Post</Link>
+            <Link to='/write' className="btn btn-outline-secondary mt-4">Create a New Blog Post</Link>
         </div>
     )
 }

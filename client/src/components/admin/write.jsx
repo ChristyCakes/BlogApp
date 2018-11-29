@@ -5,8 +5,9 @@ import * as blogsService from '../../services/blogs';
 class Write extends Component {
     constructor(props) {
         super(props);
+        let meData = JSON.parse((localStorage.getItem("me")))
         this.state = {
-            author: "",
+            author: meData.name,
             title: "",
             content: ""
         };
@@ -21,7 +22,7 @@ class Write extends Component {
     postblog(event) {
         event.preventDefault();
         blogsService.insert({
-            author: this.props.location.state.author,
+            author: this.state.author,
             title: this.state.title,
             content: this.state.content
         })
@@ -33,11 +34,12 @@ class Write extends Component {
     };
 
     render() {
+        // let meData = JSON.parse((localStorage.getItem("me")))
         return (
             <div>
                 <Nav />
                 <h1 className='heading mb-3 marginleft10'>Create a New Blog Post</h1>
-                <h4 className='white mb-3 marginleft10'>Author: {this.props.location.state.author}</h4>
+                <h4 className='white mb-3 marginleft10'>Author: {this.state.author}</h4>
                 <form action="">
                     <input
                         type="text"

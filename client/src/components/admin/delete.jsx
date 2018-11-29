@@ -6,7 +6,7 @@ class Delete extends Component {
     componentDidMount() {
         if (confirm("Confirm Delete")) {
             blogsService.destroy(this.props.location.state.blogid)
-                .then(() => this.props.history.push('/api/users/me'))
+                .then(() => this.props.history.push('/admin'))
                 .catch(err => {
                     alert("Error: Chirp not deleted");
                     console.log(err);
