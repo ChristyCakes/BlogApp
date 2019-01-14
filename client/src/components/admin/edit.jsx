@@ -6,9 +6,9 @@ class Edit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            author: "",
-            title: "",
-            content: ""
+            // author: this.props.location.state.author,
+            title: this.props.location.state.blogtitle,
+            content: this.props.location.state.content
         };
         this.putblog = this.putblog.bind(this);
         this.inputHandler = this.inputHandler.bind(this);

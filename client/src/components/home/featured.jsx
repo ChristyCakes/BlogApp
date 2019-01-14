@@ -6,7 +6,7 @@ const Featured = (props) => {
         <div className="card col-3">
             <img className="card-img-top my-3" src={props.img} alt="Card image cap" />
             <div className="card-body">
-                <h5 className="card-title text-secondary">{props.title}</h5>
+                <p className="card-title text-secondary">{props.title}</p>
                 <Link to={`/blog/${props.blogid}`} className="btn btn-info">Read More</Link>
             </div>
         </div>

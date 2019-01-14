@@ -8,7 +8,7 @@ const FeaturedContainer = (props) => {
     return (
         <div>
             <h2 className="heading center">Featured Blogs</h2>
-            <div className="cards flexrow flexend">
+            <div className="cards flexrow">
                 <Featured img={reactlogo} title="How I Learned React" blogid="4" />
                 <Featured img={fire} title="Winter Stories to Warm the Heart" blogid="9" />
                 <Featured img={coast} title="Adventures in California" blogid="5" />

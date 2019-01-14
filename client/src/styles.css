@@ -14,12 +14,12 @@
     flex-direction: row;
 }
 
-.baseline {
-    align-items: baseline;
-}
-
 .flexend {
     align-items: flex-end;
+}
+
+.baseline {
+    align-items: baseline;
 }
 
 .cards {
@@ -51,9 +51,11 @@ body {
     margin: 0 10rem;
 }
 
-.card img {
+.card-img-top {
     border-radius: 1%;
-    box-shadow: 10px 10px 5px 0px rgba(204,202,204,1)
+    box-shadow: 10px 10px 5px 0px rgba(204,202,204,1);
+    height: 10rem;
+    object-fit: cover;
 }
 
 .minibutton {
