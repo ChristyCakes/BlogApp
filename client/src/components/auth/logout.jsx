@@ -16,6 +16,7 @@ class Logout extends Component {
         userService.logout();
         this.setState({ loggedOut: true });
         localStorage.clear();
+        alert("LogOut Successful")
     }
 
     render() {

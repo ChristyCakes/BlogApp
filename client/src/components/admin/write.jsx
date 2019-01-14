@@ -34,7 +34,6 @@ class Write extends Component {
     };
 
     render() {
-        // let meData = JSON.parse((localStorage.getItem("me")))
         return (
             <div>
                 <Nav />

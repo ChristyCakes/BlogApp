@@ -1,5 +1,3 @@
-// add in placeholder strings ? for queries with parameters
-
 import { executeQuery, generatePlaceholders } from './config/db';
 
 class Table {
