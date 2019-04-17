@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import reactlogo from '../images/react.png'
 import coast from '../images/coast.jpg'
 import fire from '../images/fireplace.jpg';
 import Featured from './featured';
 
-const FeaturedContainer = (props) => {
+const FeaturedContainer = () => {
     return (
         <div>
             <h2 className="heading center">Featured Blogs</h2>

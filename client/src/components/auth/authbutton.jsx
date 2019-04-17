@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { isLoggedIn } from '../../services/user';
 
-const AuthButton = (props) => {
+const AuthButton = () => {
     if (isLoggedIn()) {
         return (
             <div>
                 <Link className="btn btn-info m-1" to="/logout">Logout</Link>
                 <Link className='btn btn-info m-1' to={{ pathname: '/admin' }}
-                    >My Posts</Link>
+                    >My Blogs</Link>
             </div>
         );
     } else {

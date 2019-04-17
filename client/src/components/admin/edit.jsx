@@ -6,7 +6,6 @@ class Edit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // author: this.props.location.state.author,
             title: this.props.location.state.blogtitle,
             content: this.props.location.state.content
         };

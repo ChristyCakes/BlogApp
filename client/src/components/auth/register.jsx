@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../home/nav';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import * as authorsService from '../../services/authors';
 import * as userService from '../../services/user';
 
@@ -39,7 +40,8 @@ class Register extends Component {
         return (
             <div>
                 <Nav />
-                <h2 className='heading mb-3 marginleft10 center'>Register</h2>
+                <h2 className='heading mb-3 marginleft10 center'>New Authors Register Below</h2>              
+                <h3 className="center">Already Registered? <Link className="link aqua" to="/login">Login Here</Link></h3>
                 <form className="center" onSubmit={event => this.postauthor(event)}>
                     <div className="form-group">
                         <input

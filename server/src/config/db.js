@@ -1,13 +1,29 @@
 import mysql from 'mysql';
+const HOST = process.env.HOST;
+const USER = process.env.USER;
+const PASSWORD = process.env.PASSWORD;
+const DATABASE = process.env.DATABASE;
+
 
 let pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'blogapp',
-    password: 'blogapp',
-    database: 'blog',
+    host: HOST, 
+    user: USER,
+    password: PASSWORD,
+    database: DATABASE,
     multipleStatements: true
 });
+
+// local mysql setup
+
+// let pool = mysql.createPool({
+//     connectionLimit: 10,
+//     host: 'localhost',
+//     user: 'blogapp',
+//     password: 'blogapp',
+//     database: 'blog',
+//     multipleStatements: true
+// });
 
 async function executeQuery(sql, args = []) {
     let connection = await getConnection();
@@ -16,7 +32,7 @@ async function executeQuery(sql, args = []) {
 
 function callProcedure(procedureName, args = []) {
     let placeholders = generatePlaceholders(args);
-    let callString = `CALL ${procedureName}(${placeholders});`; // CALL GetChirps();, or CALL InsertChirp(?,?,?);
+    let callString = `CALL ${procedureName}(${placeholders});`;
     return executeQuery(callString, args);
 }
 

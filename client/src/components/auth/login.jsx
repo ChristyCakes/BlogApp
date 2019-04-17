@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import * as userService from '../../services/user';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import IndeterminateProgress from '../utilities/indeterminateprogress';
 import Nav from '../home/nav';
 
@@ -65,7 +65,8 @@ class Login extends Component {
         return (
             <Fragment>
                 <Nav />
-                <h2 className="heading center">Login to continue</h2>
+                <h2 className="heading center">Registered Authors Login Below</h2>
+                <h3 className="center">New Author? <Link className="link aqua" to="/register">Register Here</Link></h3>
                 <form className="center" onSubmit={(e) => this.login(e)}>
                     <div className="form-group">
                         <input

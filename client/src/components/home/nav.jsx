@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { AuthButton } from '../auth';
 
-const Nav = (props) => {
+const Nav = () => {
     return (
         <div className='flexrow center'>
             <Link to="/" className="btn btn-info m-1">Home</Link>

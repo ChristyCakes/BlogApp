@@ -54,4 +54,4 @@ function me() {
     return baseService.get('/api/users/me');
 }
 
-export { isLoggedIn, checkLogin, login, logout, meData };
+export { isLoggedIn, checkLogin, login, logout };

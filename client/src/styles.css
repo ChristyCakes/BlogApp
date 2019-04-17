@@ -86,3 +86,9 @@ textarea {
 label {
     margin-bottom: 0;
 }
+
+h3 {
+    color: #868e96;
+    font-size: 18px;
+    margin: 2rem;
+}
