@@ -25,4 +25,4 @@ More Details
 * Persistent login allows users to jump from page to page then back to 'My Blogs' admin page while logged in.
 * Users send CRUD requests for individual posts from the admin page.
 * The back end routes are protected with routers and the front end with PrivateRoute.
-* The blog is deployed and live using AWS EC2, S3, and RDS.
+* The blog is deployed using AWS EC2, S3, and RDS.
