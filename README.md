@@ -12,6 +12,7 @@ The app is built with:
 * PassportJS
 * ExpressJS
 * MySQL
+* AWS
 
 
 
