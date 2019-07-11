@@ -1,11 +1,10 @@
 # Rainy Day Blog
 
-### A React Router app for reading and writing blogs. The purpose of this project is to showcase the concepts learned from my full stack web dev schooling.
+### A React Router app for reading and writing blogs.
 
-#### Visit the live site [here](http://54.215.230.88:3000/) 
-or
 #### See a video demo [here](https://www.youtube.com/watch?v=l1Rs5hOCpSk)
 
+#### Visit the live site [here](http://54.215.230.88:3000/) 
 
 The app is built with:
 * React Router
