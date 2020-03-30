@@ -4,8 +4,6 @@
 
 #### See a video demo [here](https://www.youtube.com/watch?v=l1Rs5hOCpSk)
 
-#### Visit the live site [here](http://54.215.230.88:3000/) 
-
 The app is built with:
 * React Router
 * Bootstrap and CSS
